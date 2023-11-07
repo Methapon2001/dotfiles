@@ -1,0 +1,20 @@
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+
+[username]
+style_user = "blue bold"
+style_root = "white bold"
+disabled = false
+show_always = true
+
+[directory]
+style = "green bold"
+truncate_to_repo = false
+
+[time]
+disabled = false
+format = "🕙 [$time](purple bold) "
+
+[shell]
+disabled = false
