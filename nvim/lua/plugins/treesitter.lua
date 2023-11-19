@@ -1,16 +1,10 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    version = false,
     build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile", "VeryLazy" },
     dependencies = {
-      {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        init = function()
-          require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-        end,
-      },
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
     cmd = { "TSUpdateSync" },
     keys = {
@@ -40,6 +34,8 @@ return {
         "vim",
         "vimdoc",
         "yaml",
+        "vue",
+        "svelte",
       },
       incremental_selection = {
         enable = true,
@@ -48,6 +44,15 @@ return {
           node_incremental = "<C-space>",
           scope_incremental = false,
           node_decremental = "<BS>",
+        },
+      },
+      textobjects = {
+        move = {
+          enable = true,
+          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer" },
+          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer" },
+          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer" },
+          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer" },
         },
       },
     },
@@ -65,5 +70,10 @@ return {
       end
       require("nvim-treesitter.configs").setup(opts)
     end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {},
   },
 }

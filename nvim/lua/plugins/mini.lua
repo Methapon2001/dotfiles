@@ -34,8 +34,7 @@ return {
         evaluate_single = true,
         header = logo,
         items = {
-          new_section("Find file", "Telescope find_files", "Telescope"),
-          new_section("Recent files", "Telescope oldfiles", "Telescope"),
+          new_section("Find file", "Pick files", "MiniPick (MiniExtra)"),
           new_section("Config", "e $MYVIMRC", "Config"),
           new_section("Lazy", "Lazy", "Config"),
           new_section("Quit", "qa", "Built-in"),
@@ -98,16 +97,12 @@ return {
       }
     end,
   },
-  {
-    "echasnovski/mini.statusline",
-    event = "VeryLazy",
-    opts = {},
-  },
-  {
-    "echasnovski/mini.tabline",
-    event = "VeryLazy",
-    opts = {},
-  },
+  { "echasnovski/mini.statusline", event = "VeryLazy", opts = {} },
+  { "echasnovski/mini.tabline", event = "VeryLazy", opts = {} },
+  { "echasnovski/mini.pairs", event = "VeryLazy", opts = {} },
+  { "echasnovski/mini.surround", event = "VeryLazy", opts = {} },
+  { "echasnovski/mini.jump", event = "VeryLazy", opts = {} },
+  { "echasnovski/mini.splitjoin", event = "VeryLazy", opts = {} },
   {
     "echasnovski/mini.bufremove",
     event = "VeryLazy",
@@ -127,7 +122,6 @@ return {
         if stat and stat.type == "directory" then
           vim.fn.chdir(argv)
           vim.cmd("bd")
-          -- require("mini.files").open(vim.loop.cwd(), true)
         end
       end
     end,
@@ -163,50 +157,77 @@ return {
     },
   },
   {
-    "echasnovski/mini.pairs",
-    event = "VeryLazy",
-    opts = {},
-  },
-  {
     "echasnovski/mini.comment",
     event = "VeryLazy",
-    opts = {},
-  },
-  {
-    "echasnovski/mini.surround",
-    event = "VeryLazy",
     opts = {
-      mappings = {
-        add = "sa",
-        delete = "sd",
-        find = "",
-        find_left = "",
-        highlight = "sh",
-        replace = "sr",
-        update_n_lines = "",
-
-        suffix_last = "",
-        suffix_next = "",
+      options = {
+        custom_commentstring = function()
+          return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
+        end,
       },
     },
   },
   {
+    "echasnovski/mini.hipatterns",
+    event = "VeryLazy",
+    dependencies = {
+      "echasnovski/mini.extra",
+    },
+    opts = function()
+      local words = require("mini.extra").gen_highlighter.words
+      return {
+        highlighters = {
+          fixme = words({ "FIXME" }, "MiniHipatternsFixme"),
+          hack = words({ "HACK" }, "MiniHipatternsHack"),
+          todo = words({ "TODO" }, "MiniHipatternsTodo"),
+          note = words({ "NOTE" }, "MiniHipatternsNote"),
+        },
+      }
+    end,
+  },
+  {
     "echasnovski/mini.ai",
     event = "VeryLazy",
-    dependencies = { "nvim-treesitter-textobjects" },
+    dependencies = {
+      "echasnovski/mini.extra",
+      "nvim-treesitter-textobjects",
+    },
     opts = function()
       local ai = require("mini.ai")
+      local gen_ai_spec = require("mini.extra").gen_ai_spec
       return {
-        n_lines = 500,
+        n_lines = 300,
         custom_textobjects = {
+          t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
           o = ai.gen_spec.treesitter({
             a = { "@block.outer", "@conditional.outer", "@loop.outer" },
             i = { "@block.inner", "@conditional.inner", "@loop.inner" },
           }, {}),
           f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
           c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+          B = gen_ai_spec.buffer(),
+          D = gen_ai_spec.diagnostic(),
+          I = gen_ai_spec.indent(),
+          L = gen_ai_spec.line(),
+          N = gen_ai_spec.number(),
         },
       }
     end,
   },
+  {
+    "echasnovski/mini.pick",
+    event = "VeryLazy",
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "<leader>/", "<cmd>Pick grep_live<cr>", desc = "Live Grep" },
+      { "<leader>fe", "<cmd>Pick explorer<cr>", desc = "Explorer" },
+      { "<leader>ff", "<cmd>Pick files<cr>", desc = "Find Files" },
+      { "<leader>fb", "<cmd>Pick buffers<cr>", desc = "Buffers" },
+      { "<leader>fd", "<cmd>Pick diagnostic<cr>", desc = "Diagnostic" },
+      { "<leader>fg", "<cmd>Pick grep<cr>", desc = "Grep" },
+      { "<leader>ft", "<cmd>Pick treesitter<cr>", desc = "Treesitter Node" },
+    },
+  },
+  { "echasnovski/mini.extra", event = "VeryLazy", opts = {} },
 }

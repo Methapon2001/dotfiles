@@ -1,4 +1,6 @@
 return {
   "folke/tokyonight.nvim",
-  opts = { style = "moon" },
+  opts = {
+    style = "moon",
+  },
 }

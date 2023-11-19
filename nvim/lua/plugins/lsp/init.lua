@@ -67,9 +67,6 @@ return {
             },
           },
         },
-        dartls = {},
-        prismals = {},
-        rust_analyzer = {},
       },
       capabilities = {},
       setup = {},
@@ -137,4 +134,5 @@ return {
       end
     end,
   },
+  { import = "plugins.lsp.lang" },
 }
