@@ -1,13 +1,15 @@
 # Dotfiles
 
 ## Prerequisite
+
 - zsh, zsh-syntax-highlighting[^1], zsh-autosuggestions[^2], Starship
 - lsd
 - Node.js, npm
 - Neovim
 
 ## Config
-- ZSH: `ln -s ~/dotfiles/.zsh ~/.zsh` - Contain preconfigured path (flutter, android toolchain), config (Starship, Zellij) and alias (lsd, pnpm).
+
+- ZSH: `ln -s ~/dotfiles/.zshrc ~/.zshrc` - Contain preconfigured path (flutter, android toolchain), config (Starship, Zellij) and alias (lsd, pnpm).
 - Starship: `ln -s ~/dotfiles/starship.toml ~/.config/starship.toml`
 - Neovim (PDE): `ln -s ~/dotfiles/nvim ~/.config/nvim`
 - EditorConfig: `ln -s ~/dotfiles/.editorconfig ~/.editorconfig`
