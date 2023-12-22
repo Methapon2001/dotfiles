@@ -230,4 +230,5 @@ return {
     },
   },
   { "echasnovski/mini.extra", event = "VeryLazy", opts = {} },
+  { "echasnovski/mini.move", event = "VeryLazy", opts = {} },
 }
