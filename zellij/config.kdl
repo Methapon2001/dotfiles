@@ -23,10 +23,6 @@ keybinds clear-defaults=true {
         bind "Ctrl p" { SwitchToMode "Pane"; }
     }
 
-    shared_except "resize" "locked" {
-        bind "Ctrl n" { SwitchToMode "Resize"; }
-    }
-
     normal {}
 
     locked {
