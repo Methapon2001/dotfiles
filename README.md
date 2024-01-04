@@ -15,6 +15,8 @@ My personal configuration
 
 ## Config
 
+> [!NOTE] <!-- Markdown Alert Extension Required -->
+>
 > Adjustments may be necessary when using a different Linux distribution.
 
 - zsh: `ln -s ~/dotfiles/.zshrc ~/.zshrc`
