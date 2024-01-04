@@ -157,6 +157,13 @@ return {
     },
   },
   {
+    "echasnovski/mini.cursorword",
+    event = "VeryLazy",
+    opts = {
+      delay = 500,
+    },
+  },
+  {
     "echasnovski/mini.hipatterns",
     event = "VeryLazy",
     dependencies = {
