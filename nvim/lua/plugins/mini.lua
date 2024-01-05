@@ -90,7 +90,6 @@ return {
   { "echasnovski/mini.tabline", event = "VeryLazy", opts = {} },
   { "echasnovski/mini.pairs", event = "VeryLazy", opts = {} },
   { "echasnovski/mini.surround", event = "VeryLazy", opts = {} },
-  { "echasnovski/mini.jump", event = "VeryLazy", opts = {} },
   { "echasnovski/mini.splitjoin", event = "VeryLazy", opts = {} },
   {
     "echasnovski/mini.bufremove",
@@ -214,6 +213,7 @@ return {
     "echasnovski/mini.pick",
     event = "VeryLazy",
     opts = {},
+    dependencies = { "echasnovski/mini.extra" },
     -- stylua: ignore
     keys = {
       { "<leader>/", "<cmd>Pick grep_live<cr>", desc = "Live Grep" },
