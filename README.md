@@ -2,7 +2,7 @@
 
 My personal configuration
 
-## Prerequisite
+## Packages
 
 - [zsh](https://www.zsh.org/)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) [^1]
