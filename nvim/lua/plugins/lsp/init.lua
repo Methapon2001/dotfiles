@@ -4,6 +4,9 @@ return {
     cmd = "Mason",
     build = ":MasonUpdate",
     opts = {},
+    -- stylua: ignore
+    keys = {
+      { "<leader>m", "<cmd>Mason<cr>", desc = "Delete Buffer" },
     },
     config = function(_, opts)
       require("mason").setup(opts)
