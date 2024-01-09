@@ -3,10 +3,7 @@ return {
     "williamboman/mason.nvim",
     cmd = "Mason",
     build = ":MasonUpdate",
-    opts = {
-      ui = {
-        border = "single",
-      },
+    opts = {},
     },
     config = function(_, opts)
       require("mason").setup(opts)
