@@ -88,12 +88,13 @@ return {
   },
   { "echasnovski/mini.statusline", event = "VeryLazy", opts = {} },
   { "echasnovski/mini.tabline", event = "VeryLazy", opts = {} },
-  { "echasnovski/mini.pairs", event = "VeryLazy", opts = {} },
-  { "echasnovski/mini.surround", event = "VeryLazy", opts = {} },
-  { "echasnovski/mini.splitjoin", event = "VeryLazy", opts = {} },
+  { "echasnovski/mini.pairs", event = { "BufReadPre", "BufNewFile" }, opts = {} },
+  { "echasnovski/mini.surround", event = { "BufReadPre", "BufNewFile" }, opts = {} },
+  { "echasnovski/mini.splitjoin", event = { "BufReadPre", "BufNewFile" }, opts = {} },
+  { "echasnovski/mini.move", event = { "BufReadPre", "BufNewFile" }, opts = {} },
   {
     "echasnovski/mini.bufremove",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     -- stylua: ignore
     keys = {
       { "<leader>bd", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer" },
@@ -102,6 +103,7 @@ return {
   },
   {
     "echasnovski/mini.files",
+    event = "VeryLazy",
     init = function()
       if vim.fn.argc() == 1 then
         local argv = vim.fn.argv(0)
@@ -146,7 +148,7 @@ return {
   },
   {
     "echasnovski/mini.comment",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
       options = {
         custom_commentstring = function()
@@ -157,14 +159,14 @@ return {
   },
   {
     "echasnovski/mini.cursorword",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
       delay = 500,
     },
   },
   {
     "echasnovski/mini.hipatterns",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "echasnovski/mini.extra",
     },
@@ -182,7 +184,7 @@ return {
   },
   {
     "echasnovski/mini.ai",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "echasnovski/mini.extra",
       "nvim-treesitter-textobjects",
@@ -225,7 +227,6 @@ return {
       { "<leader>ft", "<cmd>Pick treesitter<cr>", desc = "Treesitter Node" },
     },
   },
+  { "echasnovski/mini.notify", event = "VeryLazy", opts = {} },
   { "echasnovski/mini.extra", event = "VeryLazy", opts = {} },
-  { "echasnovski/mini.move", event = "VeryLazy", opts = {} },
-  { "echasnovski/mini.notify", opts = {} },
 }
