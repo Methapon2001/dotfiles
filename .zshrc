@@ -1,6 +1,3 @@
-eval "$(starship init zsh)"
-eval "$(zellij setup --generate-auto-start zsh)"
-
 # settings
 setopt histignorealldups sharehistory
 HISTSIZE=1000
@@ -10,6 +7,10 @@ HISTFILE=~/.zsh_history
 # completion
 autoload -Uz compinit
 compinit
+
+eval "$(starship init zsh)"
+eval "$(zellij setup --generate-auto-start zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
