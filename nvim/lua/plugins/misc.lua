@@ -53,12 +53,9 @@ return {
       end,
     },
   },
-  {
-    "stevearc/dressing.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
+  { "j-hui/fidget.nvim", opts = {} },
   { "nvim-lua/plenary.nvim", lazy = true },
   { "nvim-tree/nvim-web-devicons", lazy = true },
   { "MunifTanjim/nui.nvim", lazy = true },
+  { "stevearc/dressing.nvim", event = "VeryLazy" },
 }

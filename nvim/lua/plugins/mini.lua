@@ -227,6 +227,5 @@ return {
       { "<leader>ft", "<cmd>Pick treesitter<cr>", desc = "Treesitter Node" },
     },
   },
-  { "echasnovski/mini.notify", event = "VeryLazy", opts = {} },
   { "echasnovski/mini.extra", event = "VeryLazy", opts = {} },
 }
