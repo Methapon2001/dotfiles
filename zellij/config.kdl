@@ -65,3 +65,5 @@ keybinds clear-defaults=true {
 }
 
 theme "tokyo-night"
+
+pane_frames false
