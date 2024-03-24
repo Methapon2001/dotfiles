@@ -52,40 +52,6 @@ return {
       starter.setup(opts)
     end,
   },
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    opts = function()
-      -- don't use animate when scrolling with the mouse
-      local mouse_scrolled = false
-      for _, scroll in ipairs({ "Up", "Down" }) do
-        local key = "<ScrollWheel" .. scroll .. ">"
-        vim.keymap.set({ "", "i" }, key, function()
-          mouse_scrolled = true
-          return key
-        end, { expr = true })
-      end
-
-      local animate = require("mini.animate")
-      return {
-        resize = {
-          timing = animate.gen_timing.linear({ duration = 100, unit = "total" }),
-        },
-        scroll = {
-          timing = animate.gen_timing.linear({ duration = 150, unit = "total" }),
-          subscroll = animate.gen_subscroll.equal({
-            predicate = function(total_scroll)
-              if mouse_scrolled then
-                mouse_scrolled = false
-                return false
-              end
-              return total_scroll > 1
-            end,
-          }),
-        },
-      }
-    end,
-  },
   { "echasnovski/mini.statusline", event = "VeryLazy", opts = {} },
   { "echasnovski/mini.tabline", event = "VeryLazy", opts = {} },
   { "echasnovski/mini.pairs", event = { "BufReadPre", "BufNewFile" }, opts = {} },
@@ -116,13 +82,11 @@ return {
       end
     end,
     opts = {
+      options = { use_as_default_explorer = true },
       windows = {
-        preview = true,
-        width_focus = 30,
-        width_preview = 70,
-      },
-      options = {
-        use_as_default_explorer = true,
+        preview = false,
+        width_focus = 70,
+        width_preview = 50,
       },
       mappings = {
         go_in = "",
@@ -160,16 +124,12 @@ return {
   {
     "echasnovski/mini.cursorword",
     event = { "BufReadPre", "BufNewFile" },
-    opts = {
-      delay = 500,
-    },
+    opts = { delay = 500 },
   },
   {
     "echasnovski/mini.hipatterns",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "echasnovski/mini.extra",
-    },
+    dependencies = { "echasnovski/mini.extra" },
     opts = function()
       local words = require("mini.extra").gen_highlighter.words
       return {
