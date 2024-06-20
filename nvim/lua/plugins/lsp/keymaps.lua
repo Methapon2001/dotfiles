@@ -7,6 +7,7 @@ M.keys = {
   { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
   { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action" },
   { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
+  { "<leader>h", function () vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({})) end, desc = "Toggle Inlay Hint"},
   {
     "gD",
     function()
