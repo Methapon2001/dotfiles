@@ -68,7 +68,6 @@ return {
           },
         },
       },
-      capabilities = {},
       setup = {},
     },
     config = function(_, opts)
@@ -87,10 +86,9 @@ return {
 
       local capabilities = vim.tbl_deep_extend(
         "force",
-        {},
+        opts.capabilities or {},
         vim.lsp.protocol.make_client_capabilities(),
-        cmp_nvim_lsp.default_capabilities(),
-        opts.capabilities or {}
+        cmp_nvim_lsp.default_capabilities()
       )
 
       local function setup(server)
