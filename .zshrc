@@ -11,6 +11,7 @@ compinit
 eval "$(starship init zsh)"
 eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -28,6 +29,7 @@ export PATH="$HOME/application/flutter/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 alias pn="pnpm"
+alias pnx="pnpx"
 alias ls="lsd"
 alias l="ls -l"
 alias la="ls -a"
