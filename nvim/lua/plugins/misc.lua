@@ -55,7 +55,6 @@ return {
   },
   { "j-hui/fidget.nvim", opts = {} },
   { "nvim-lua/plenary.nvim", lazy = true },
-  { "nvim-tree/nvim-web-devicons", lazy = true },
   { "MunifTanjim/nui.nvim", lazy = true },
   { "stevearc/dressing.nvim", event = "VeryLazy" },
 }
