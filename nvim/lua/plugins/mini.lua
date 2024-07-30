@@ -188,5 +188,5 @@ return {
     },
   },
   { "echasnovski/mini.extra", event = "VeryLazy", opts = {} },
-  { "echasnovski/mini.icons", event = "VeryLazy", opts = {} },
+  { "echasnovski/mini.icons", opts = {} },
 }
