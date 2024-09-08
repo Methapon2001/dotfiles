@@ -14,9 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 require("config.options")
 require("config.lazy")
 
-local ok, tokyonight = pcall(require, "tokyonight")
+local ok, _ = pcall(require, "catppuccin")
+
 if ok then
-  tokyonight.load()
+  vim.cmd.colorscheme("catppuccin")
 end
 
 require("config.autocmds")
