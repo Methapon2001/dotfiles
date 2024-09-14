@@ -15,41 +15,6 @@ return {
     },
   },
   {
-    "echasnovski/mini.files",
-    event = "VeryLazy",
-    init = function()
-      if vim.fn.argc() == 1 then
-        local argv = vim.fn.argv(0)
-        ---@diagnostic disable-next-line: param-type-mismatch
-        local stat = vim.loop.fs_stat(argv)
-        if stat and stat.type == "directory" then
-          vim.fn.chdir(argv)
-          vim.cmd("bd")
-        end
-      end
-    end,
-    opts = {
-      options = { use_as_default_explorer = true },
-      windows = {
-        preview = false,
-        width_focus = 70,
-        width_preview = 50,
-      },
-      mappings = {
-        go_in = "",
-        go_in_plus = "<cr>",
-        go_out = "",
-        go_out_plus = "<bs>",
-        reset = "",
-      },
-    },
-    -- stylua: ignore
-    keys = {
-      { "<leader>e", function() require("mini.files").open(vim.api.nvim_buf_get_name(0), true) end, desc = "Open mini.files" },
-      { "<leader>E", function() require("mini.files").open(vim.loop.cwd(), true) end, desc = "Open mini.files (cwd)" },
-    },
-  },
-  {
     "echasnovski/mini.indentscope",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
