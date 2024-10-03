@@ -18,6 +18,7 @@ return {
         "bash",
         "c",
         "html",
+        "css",
         "javascript",
         "jsdoc",
         "json",
