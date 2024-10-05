@@ -1,5 +1,19 @@
 return {
   {
+    "luukvbaal/statuscol.nvim",
+    config = function()
+      local builtin = require("statuscol.builtin")
+
+      require("statuscol").setup({
+        segments = {
+          { text = { " ", "%s" }, click = "v:lua.ScSa" },
+          { text = { builtin.foldfunc, " " }, colwidth = 1, click = "v:lua.ScFa" },
+          { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+        },
+      })
+    end,
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
