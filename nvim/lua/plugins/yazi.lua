@@ -2,7 +2,7 @@ return {
   ---@type LazySpec
   {
     "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
+    lazy = false,
     keys = {
       {
         "<leader>e",
@@ -15,9 +15,6 @@ return {
         desc = "Open the file manager in nvim's working directory",
       },
     },
-    opts = {
-      open_for_directories = true,
-      floating_window_scaling_factor = 0.8,
-    },
+    opts = { open_for_directories = true },
   },
 }
