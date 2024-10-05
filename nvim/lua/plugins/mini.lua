@@ -85,7 +85,22 @@ return {
   {
     "echasnovski/mini.pick",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      window = {
+        config = function()
+          local scale = 0.7
+          local height = math.floor(scale * vim.o.lines)
+          local width = math.floor(scale * vim.o.columns)
+          return {
+            anchor = "NW",
+            height = height,
+            width = width,
+            row = math.floor(0.5 * (vim.o.lines - height)),
+            col = math.floor(0.5 * (vim.o.columns - width)),
+          }
+        end,
+      },
+    },
     dependencies = { "echasnovski/mini.extra" },
     -- stylua: ignore
     keys = {
