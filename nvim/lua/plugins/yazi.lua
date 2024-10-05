@@ -15,6 +15,9 @@ return {
         desc = "Open the file manager in nvim's working directory",
       },
     },
-    opts = { open_for_directories = true },
+    opts = {
+      open_for_directories = true,
+      floating_window_scaling_factor = 0.8,
+    },
   },
 }
