@@ -81,6 +81,14 @@ return {
       end
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          local buffer = args.data.buffer ---@type number
+          require("plugins.lsp.keymaps").on_attach(client, buffer)
+        end,
+      })
+
       local servers = opts.servers
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -94,9 +102,6 @@ return {
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
-          on_attach = function(client, buffer)
-            require("plugins.lsp.keymaps").on_attach(client, buffer)
-          end,
         }, servers[server] or {})
 
         if opts.setup[server] then
