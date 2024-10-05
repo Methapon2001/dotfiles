@@ -36,6 +36,8 @@ return {
         "yaml",
         "vue",
         "svelte",
+        "toml",
+        "rust",
       },
       incremental_selection = {
         enable = true,
