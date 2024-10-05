@@ -3,10 +3,10 @@ M = {}
 ---@type LazyKeysSpec[]
 -- stylua: ignore
 M.keys = {
+  { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
   { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
   { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action" },
   { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
-  { "<leader>h", function () vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({})) end, desc = "Toggle Inlay Hint"},
   {
     "gD",
     function()
@@ -39,7 +39,7 @@ M.keys = {
   },
   { "gi", function() require("mini.extra").pickers.lsp({ scope = "implementation" }, { reuse_win = true }) end, desc = "Goto Implementation", },
   { "gr", function() require("mini.extra").pickers.lsp({ scope = "references" }, { reuse_win = true }) end, desc = "Goto References", },
-  { "gs", function() require("mini.extra").pickers.lsp({ scope = "document_symbol" }, { reuse_win = true }) end, desc = "Symbols", },
+  { "gs", function() require("mini.extra").pickers.lsp({ scope = "document_symbol" }, { reuse_win = true }) end, desc = "Symbols",},
   { "K", vim.lsp.buf.hover, desc = "Hover" },
   { "]d", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
   { "[d", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
