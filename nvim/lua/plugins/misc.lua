@@ -1,4 +1,8 @@
 return {
+  { "nvim-lua/plenary.nvim", lazy = true },
+  { "stevearc/dressing.nvim", event = "VeryLazy" },
+  { "j-hui/fidget.nvim", opts = {} },
+  { "numToStr/Comment.nvim", opts = {} },
   {
     "luukvbaal/statuscol.nvim",
     config = function()
@@ -40,22 +44,24 @@ return {
         changedelete = { text = "▎" },
         untracked = { text = "▎" },
       },
-      current_line_blame = true,
-      current_line_blame_opts = {
-        virt_text = true,
-        virt_text_pos = "eol",
-        delay = 500,
-        ignore_whitespace = false,
+      signs_staged = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
+        changedelete = { text = "▎" },
+        untracked = { text = "▎" },
       },
+      current_line_blame = true,
       on_attach = function(buffer)
         local gitsigns = package.loaded.gitsigns
 
         local function map(mode, l, r, desc)
           vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
         end
-        -- stylua: ignore start
-        map("n", "]h", gitsigns.next_hunk, "Next Hunk")
-        map("n", "[h", gitsigns.prev_hunk, "Prev Hunk")
+
+        map("n", "]c", gitsigns.next_hunk, "Next Hunk")
+        map("n", "[c", gitsigns.prev_hunk, "Prev Hunk")
         map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
         map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
         map("n", "<leader>ghS", gitsigns.stage_buffer, "Stage Buffer")
@@ -67,8 +73,10 @@ return {
       end,
     },
   },
-  { "j-hui/fidget.nvim", opts = {} },
-  { "nvim-lua/plenary.nvim", lazy = true },
-  { "MunifTanjim/nui.nvim", lazy = true },
-  { "stevearc/dressing.nvim", event = "VeryLazy" },
+  {
+    "nvim-pack/nvim-spectre",
+    build = false,
+    cmd = "Spectre",
+    opts = { open_cmd = "noswapfile vnew" },
+  },
 }

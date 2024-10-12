@@ -23,17 +23,6 @@ return {
     },
   },
   {
-    "echasnovski/mini.comment",
-    event = { "BufReadPre", "BufNewFile" },
-    opts = {
-      options = {
-        custom_commentstring = function()
-          return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
-        end,
-      },
-    },
-  },
-  {
     "echasnovski/mini.cursorword",
     event = { "BufReadPre", "BufNewFile" },
     opts = { delay = 500 },
