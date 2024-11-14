@@ -6,7 +6,7 @@ return {
     lazy = false,
     opts = {
       keymap = {
-        accept = { "<Tab>", "<CR>" },
+        preset = "enter",
       },
       windows = {
         autocomplete = {
