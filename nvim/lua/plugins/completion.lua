@@ -1,7 +1,7 @@
 return {
   {
     "saghen/blink.cmp",
-    version = "v0.*",
+    build = "cargo +nightly build --release",
     dependencies = "rafamadriz/friendly-snippets",
     lazy = false,
     opts = {
@@ -10,7 +10,9 @@ return {
       },
       windows = {
         autocomplete = {
-          draw = "reversed",
+          draw = {
+            columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
+          },
         },
         documentation = {
           auto_show = true,
