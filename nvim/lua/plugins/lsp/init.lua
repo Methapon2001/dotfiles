@@ -97,6 +97,8 @@ return {
           capabilities = vim.deepcopy(capabilities),
         }, servers[server] or {})
 
+        server_opts.capabilities = require("blink.cmp").get_lsp_capabilities(server_opts.capabilities)
+
         if opts.setup[server] then
           if opts.setup[server](server, server_opts) then
             return
