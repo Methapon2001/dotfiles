@@ -3,6 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        basedpyright = {},
         ruff = {
           cmd_env = { RUFF_TRACE = "messages" },
           init_options = {
