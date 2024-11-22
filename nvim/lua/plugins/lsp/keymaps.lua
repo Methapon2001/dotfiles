@@ -1,8 +1,7 @@
-M = {}
+local M = {}
 
----@type LazyKeysSpec[]
 -- stylua: ignore
-M.keys = {
+M.keymaps = {
   { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
   { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
   { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action" },
@@ -37,23 +36,26 @@ M.keys = {
     end,
     desc = "Goto Definition",
   },
-  { "gi", function() require("mini.extra").pickers.lsp({ scope = "implementation" }, { reuse_win = true }) end, desc = "Goto Implementation", },
-  { "gr", function() require("mini.extra").pickers.lsp({ scope = "references" }, { reuse_win = true }) end, desc = "Goto References", },
-  { "gs", function() require("mini.extra").pickers.lsp({ scope = "document_symbol" }, { reuse_win = true }) end, desc = "Symbols",},
   { "K", vim.lsp.buf.hover, desc = "Hover" },
   { "]d", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
   { "[d", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
+  { "gi", function() require("mini.extra").pickers.lsp({ scope = "implementation" }, { reuse_win = true }) end, desc = "Goto Implementation" },
+  { "gr", function() require("mini.extra").pickers.lsp({ scope = "references" }, { reuse_win = true }) end, desc = "Goto References" },
+  { "gs", function() require("mini.extra").pickers.lsp({ scope = "document_symbol" }, { reuse_win = true }) end, desc = "Symbols" },
 }
 
 ---@param buffer buffer
 function M.on_attach(_, buffer)
-  local keys = require("lazy.core.handler.keys")
+  for _, keymap in pairs(M.keymaps) do
+    local opts = { buffer } ---@type vim.keymap.set.Opts
 
-  for _, keymap in pairs(keys.resolve(M.keys)) do
-    local opts = keys.opts(keymap)
-    opts.silent = opts.silent ~= false
-    opts.buffer = buffer
-    vim.keymap.set(keymap.mode or "n", keymap.lhs, keymap.rhs, opts)
+    for k, v in pairs(keymap) do
+      if type(k) ~= "number" then
+        opts[k] = v
+      end
+    end
+
+    vim.keymap.set(keymap.mode or "n", keymap[1], keymap[2], opts)
   end
 end
 
