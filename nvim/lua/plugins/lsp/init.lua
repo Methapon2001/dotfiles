@@ -88,15 +88,12 @@ return {
 
       local servers = opts.servers
 
-      local capabilities =
-        vim.tbl_deep_extend("force", opts.capabilities or {}, vim.lsp.protocol.make_client_capabilities())
+      local capabilities = require("blink.cmp").get_lsp_capabilities(opts.capabilities)
 
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
         }, servers[server] or {})
-
-        server_opts.capabilities = require("blink.cmp").get_lsp_capabilities(server_opts.capabilities)
 
         if opts.setup[server] then
           if opts.setup[server](server, server_opts) then
