@@ -4,9 +4,8 @@ return {
     cmd = "Mason",
     build = ":MasonUpdate",
     opts = {},
-    -- stylua: ignore
     keys = {
-      { "<leader>m", "<cmd>Mason<cr>", desc = "Delete Buffer" },
+      { "<leader>m", "<cmd>Mason<cr>", desc = "Mason" },
     },
     config = function(_, opts)
       require("mason").setup(opts)
@@ -37,8 +36,6 @@ return {
         { "folke/neodev.nvim", opts = {} },
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "hrsh7th/nvim-cmp",
-        "hrsh7th/cmp-nvim-lsp",
       },
     },
     opts = {
@@ -90,14 +87,8 @@ return {
       })
 
       local servers = opts.servers
-      local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-      local capabilities = vim.tbl_deep_extend(
-        "force",
-        opts.capabilities or {},
-        vim.lsp.protocol.make_client_capabilities(),
-        cmp_nvim_lsp.default_capabilities()
-      )
+      local capabilities = require("blink.cmp").get_lsp_capabilities(opts.capabilities)
 
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {

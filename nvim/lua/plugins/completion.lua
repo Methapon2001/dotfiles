@@ -1,60 +1,29 @@
 return {
   {
-    "L3MON4D3/LuaSnip",
-    build = "make install_jsregexp",
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-      config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end,
-    },
+    "saghen/blink.cmp",
+    build = "cargo +nightly build --release",
+    dependencies = "rafamadriz/friendly-snippets",
+    lazy = false,
     opts = {
-      history = true,
-      delete_check_events = "TextChanged",
-    },
-    -- stylua: ignore
-    keys = {
-      { "<c-k>", function() require("luasnip").expand_or_jump() end, mode = "i" },
-      { "<c-l>", function() require("luasnip").jump(1) end, mode = { "i", "s" } },
-      { "<c-j>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
-    },
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    opts = function()
-      local cmp = require("cmp")
-      local defaults = require("cmp.config.default")()
-
-      return {
-        completion = {
-          completeopt = "menu,menuone,noinsert",
-          keyword_length = 2,
+      keymap = {
+        preset = "enter",
+      },
+      windows = {
+        autocomplete = {
+          draw = {
+            columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
+          },
         },
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
+        documentation = {
+          auto_show = true,
         },
-        mapping = cmp.mapping.preset.insert({
-          ["<c-space>"] = cmp.mapping.complete(),
-          ["<c-e>"] = cmp.mapping.abort(),
-          ["<cr>"] = cmp.mapping.confirm({ select = true }),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
-        sorting = defaults.sorting,
-      }
-    end,
+      },
+      highlight = {
+        -- fallback highlight groups to nvim-cmp's highlight groups
+        -- useful for when your theme doesn't support blink.cmp
+        -- will be removed in a future release
+        use_nvim_cmp_as_default = true,
+      },
+    },
   },
 }
