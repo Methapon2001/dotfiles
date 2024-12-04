@@ -19,3 +19,8 @@ gui:
       - "#cad3f5"
     searchingActiveBorderColor:
       - "#eed49f"
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
