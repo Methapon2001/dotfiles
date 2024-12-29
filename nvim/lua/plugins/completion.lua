@@ -18,6 +18,9 @@ return {
           auto_show = true,
         },
       },
+      sources = {
+        cmdline = {},
+      },
     },
   },
 }
