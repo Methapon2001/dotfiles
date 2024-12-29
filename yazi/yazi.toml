@@ -5,7 +5,5 @@ edit = [{ run = 'nvim "$@"', block = true, for = "unix" }]
 show_hidden = true
 
 [plugin]
-append_previewers = [
-  { name = "*.md", run = "mdcat" },
-  { name = "*", run = "hexyl" },
-]
+prepend_previewers = [{ name = "*.md", run = "mdcat" }]
+append_previewers = [{ name = "*", run = "hexyl" }]
