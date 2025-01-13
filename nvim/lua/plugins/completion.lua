@@ -5,22 +5,19 @@ return {
     dependencies = "rafamadriz/friendly-snippets",
     lazy = false,
     opts = {
-      keymap = {
-        preset = "enter",
-      },
+      keymap = { preset = "enter" },
       completion = {
+        list = {
+          selection = { auto_insert = false },
+        },
         menu = {
           draw = {
-            columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
+            treesitter = { "lsp" },
           },
         },
-        documentation = {
-          auto_show = true,
-        },
+        documentation = { auto_show = true },
       },
-      sources = {
-        cmdline = {},
-      },
+      sources = { cmdline = {} },
     },
   },
 }
