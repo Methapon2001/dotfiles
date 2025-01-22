@@ -7,26 +7,6 @@ return {
     keys = {
       { "<leader>m", "<cmd>Mason<cr>", desc = "Mason" },
     },
-    config = function(_, opts)
-      require("mason").setup(opts)
-
-      local mason_registry = require("mason-registry")
-
-      local function ensure_installed()
-        for _, tool in ipairs(opts.ensure_installed or {}) do
-          local pkg = mason_registry.get_package(tool)
-          if not pkg:is_installed() then
-            pkg:install()
-          end
-        end
-      end
-
-      if mason_registry.refresh then
-        mason_registry.refresh(ensure_installed)
-      else
-        ensure_installed()
-      end
-    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -86,9 +66,9 @@ return {
         end,
       })
 
-      local servers = opts.servers
-
       local capabilities = require("blink.cmp").get_lsp_capabilities(opts.capabilities)
+
+      local servers = opts.servers
 
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
@@ -104,12 +84,8 @@ return {
         require("lspconfig")[server].setup(server_opts)
       end
 
-      local have_mason, mason_lsp = pcall(require, "mason-lspconfig")
-      local mason_lsp_servers = {}
-
-      if have_mason then
-        mason_lsp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
-      end
+      local mason_lsp = require("mason-lspconfig")
+      local mason_lsp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
 
       local ensure_installed = {} ---@type string[]
       for server, server_opts in pairs(servers) do
@@ -123,9 +99,11 @@ return {
         end
       end
 
-      if have_mason then
-        mason_lsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
-      end
+      mason_lsp.setup({
+        handlers = { setup },
+        automatic_installation = true,
+        ensure_installed = ensure_installed,
+      })
     end,
   },
   { import = "plugins.lsp.lang" },
