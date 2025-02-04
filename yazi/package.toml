@@ -1,12 +1,12 @@
 [plugin]
 deps = [
-  { use = "yazi-rs/plugins:full-border", rev = "7707c09" },
-  { use = "yazi-rs/plugins:git", rev = "7707c09" },
-  { use = "Rolv-Apneseth/starship", rev = "4053c8c" }, { use = "Reledia/hexyl", rev = "39d3d4e" }, { use = "GrzegorzKozub/mdcat", rev = "d3d5089" }, { use = "yazi-rs/plugins:hide-preview", rev = "7707c09" },
+  { use = "yazi-rs/plugins:full-border", rev = "02d18be" },
+  { use = "yazi-rs/plugins:git", rev = "02d18be" },
+  { use = "Rolv-Apneseth/starship", rev = "af8bf6f" }, { use = "Reledia/hexyl", rev = "39d3d4e" }, { use = "GrzegorzKozub/mdcat", rev = "d3d5089" }, { use = "yazi-rs/plugins:hide-preview", rev = "02d18be" },
 ]
 
 [flavor]
 deps = [
-  { use = "yazi-rs/flavors:catppuccin-macchiato", rev = "78d1d19" },
-  { use = "yazi-rs/flavors:catppuccin-frappe", rev = "78d1d19" },
+  { use = "yazi-rs/flavors:catppuccin-macchiato", rev = "fd85060" },
+  { use = "yazi-rs/flavors:catppuccin-frappe", rev = "fd85060" },
 ]
