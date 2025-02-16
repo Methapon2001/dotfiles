@@ -26,6 +26,7 @@ return {
           information = { "underline" },
         },
       },
+      snacks = true,
       treesitter = true,
       treesitter_context = true,
     },

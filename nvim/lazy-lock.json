@@ -6,7 +6,6 @@
   "codedocs.nvim": { "branch": "main", "commit": "bdca497f695787cd17a93e5c10f6602e38c5192e" },
   "conform.nvim": { "branch": "master", "commit": "a6f5bdb78caa305496357d17e962bbc4c0b392e2" },
   "crates.nvim": { "branch": "main", "commit": "1d92a7f449a2a76d8f4c3459bd98f450e76d2ea3" },
-  "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "fidget.nvim": { "branch": "main", "commit": "d9ba6b7bfe29b3119a610892af67602641da778e" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "gitsigns.nvim": { "branch": "main", "commit": "8b00147519d6f8353867d5d0b55f587306b0cfb6" },
@@ -34,6 +33,6 @@
   "nvim-treesitter": { "branch": "master", "commit": "38e46a6d7ade5c8718f77b2b9fd98a0f7ab32c1e" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "ad8f0a472148c3e0ae9851e26a722ee4e29b1595" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
-  "statuscol.nvim": { "branch": "main", "commit": "a2a0e3ed55ba0f636ce0b2ccf61bca4050edd288" },
+  "snacks.nvim": { "branch": "main", "commit": "332f4278b02b45731dbfcd76390a317b5302b7c1" },
   "yazi.nvim": { "branch": "main", "commit": "98db02660a0f853f0bbf051c14f613aff44e5fd8" }
 }

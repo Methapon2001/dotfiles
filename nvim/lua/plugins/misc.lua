@@ -1,21 +1,21 @@
 return {
   { "nvim-lua/plenary.nvim", lazy = true },
-  { "stevearc/dressing.nvim", event = "VeryLazy" },
   { "j-hui/fidget.nvim", opts = {} },
   { "numToStr/Comment.nvim", opts = {} },
   {
-    "luukvbaal/statuscol.nvim",
-    config = function()
-      local builtin = require("statuscol.builtin")
-
-      require("statuscol").setup({
-        segments = {
-          { text = { "%s" }, click = "v:lua.ScSa" },
-          { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-          { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
-        },
-      })
-    end,
+    "folke/snacks.nvim",
+    lazy = false,
+    opts = {
+      input = {},
+      lazygit = {
+        configure = false,
+      },
+      statuscolumn = {
+        folds = { open = true },
+        left = { "mark", "sign", "git" },
+        right = { "fold" },
+      },
+    },
   },
   {
     "lukas-reineke/indent-blankline.nvim",
