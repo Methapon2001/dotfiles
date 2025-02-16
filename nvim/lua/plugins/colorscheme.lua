@@ -20,10 +20,10 @@ return {
       native_lsp = {
         enabled = true,
         underlines = {
-          errors = { "undercurl" },
-          hints = { "undercurl" },
-          warnings = { "undercurl" },
-          information = { "undercurl" },
+          errors = { "underline" },
+          hints = { "underline" },
+          warnings = { "underline" },
+          information = { "underline" },
         },
       },
       treesitter = true,
