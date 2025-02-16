@@ -1,12 +1,44 @@
-[plugin]
-deps = [
-  { use = "yazi-rs/plugins:full-border", rev = "02d18be" },
-  { use = "yazi-rs/plugins:git", rev = "02d18be" },
-  { use = "Rolv-Apneseth/starship", rev = "af8bf6f" }, { use = "Reledia/hexyl", rev = "39d3d4e" }, { use = "GrzegorzKozub/mdcat", rev = "d3d5089" }, { use = "yazi-rs/plugins:hide-preview", rev = "02d18be" },
-]
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "beb586a"
+hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
 
-[flavor]
-deps = [
-  { use = "yazi-rs/flavors:catppuccin-macchiato", rev = "fd85060" },
-  { use = "yazi-rs/flavors:catppuccin-frappe", rev = "fd85060" },
-]
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "beb586a"
+hash = "771f18427fb75fb19990ce602bb322f4"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "d1cd0a3"
+hash = "d1fee6d0f74cb52d4e031dc6b9207f31"
+
+[[plugin.deps]]
+use = "Reledia/hexyl"
+rev = "39d3d4e"
+hash = "dd624cbaff94af65f39fd86bc57b340"
+
+[[plugin.deps]]
+use = "GrzegorzKozub/mdcat"
+rev = "d3d5089"
+hash = "40c20e6c1085d1f45309b9f148bf4f6e"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:hide-preview"
+rev = "beb586a"
+hash = "55904f17e1053cfb91dacd9015a99f9d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "beb586a"
+hash = "5c4d8080367dd2561a18c1cf5a1dd295"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-macchiato"
+rev = "302c0d5"
+hash = "c34feed32d555e79ab9a0c0a7bdda2be"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-frappe"
+rev = "302c0d5"
+hash = "e88895e8f8b7926f20946f273ecc7348"
