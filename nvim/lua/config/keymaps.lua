@@ -21,8 +21,6 @@ map({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
 
 map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
-
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
