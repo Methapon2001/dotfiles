@@ -11,13 +11,15 @@ return {
           selection = { auto_insert = false },
         },
         menu = {
+          auto_show = function(ctx)
+            return ctx.mode ~= "cmdline"
+          end,
           draw = {
             treesitter = { "lsp" },
           },
         },
         documentation = { auto_show = true },
       },
-      sources = { cmdline = {} },
     },
   },
   {
