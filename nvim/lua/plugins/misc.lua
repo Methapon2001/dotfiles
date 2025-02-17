@@ -22,11 +22,17 @@ return {
         left = { "mark", "sign", "git" },
         right = { "fold" },
       },
-      picker = {},
+      picker = {
+        layout = {
+          preview = false, -- use <a-p> to toggle preview
+        },
+      },
     },
     -- stylua: ignore
     keys = {
       { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+      { "<leader>/", function() Snacks.picker.grep() end, desc = "Live Grep" },
+      { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
       { "<leader>fb", function () Snacks.picker.buffers() end, desc = "Find Buffers" },
       { "<leader>fd", function () Snacks.picker.diagnostics() end, desc = "Diagnostics" },
       { "<leader>ft", function () Snacks.picker.treesitter() end, desc = "Treesitter Nodes" },
