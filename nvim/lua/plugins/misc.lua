@@ -6,7 +6,14 @@ return {
     "folke/snacks.nvim",
     lazy = false,
     opts = {
-      input = {},
+      input = {
+        win = {
+          relative = "cursor",
+          row = -3,
+          col = 0,
+          width = 32,
+        },
+      },
       lazygit = {
         configure = false,
       },
@@ -15,6 +22,16 @@ return {
         left = { "mark", "sign", "git" },
         right = { "fold" },
       },
+      picker = {},
+    },
+    -- stylua: ignore
+    keys = {
+      { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+      { "<leader>fb", function () Snacks.picker.buffers() end, desc = "Find Buffers" },
+      { "<leader>fd", function () Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+      { "<leader>ft", function () Snacks.picker.treesitter() end, desc = "Treesitter Nodes" },
+      { "<leader>fz", function () Snacks.picker.zoxide() end, desc = "Zoxide" },
+      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit", mode = { "n" } },
     },
   },
   {

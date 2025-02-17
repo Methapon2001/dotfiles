@@ -94,12 +94,7 @@ return {
     -- stylua: ignore
     keys = {
       { "<leader>/", "<cmd>Pick grep_live<cr>", desc = "Live Grep" },
-      { "<leader>fe", "<cmd>Pick explorer<cr>", desc = "Explorer" },
       { "<leader>ff", "<cmd>Pick files<cr>", desc = "Find Files" },
-      { "<leader>fb", "<cmd>Pick buffers<cr>", desc = "Buffers" },
-      { "<leader>fd", "<cmd>Pick diagnostic<cr>", desc = "Diagnostic" },
-      { "<leader>fg", "<cmd>Pick grep<cr>", desc = "Grep" },
-      { "<leader>ft", "<cmd>Pick treesitter<cr>", desc = "Treesitter Node" },
     },
   },
   { "echasnovski/mini.extra", event = "VeryLazy", opts = {} },

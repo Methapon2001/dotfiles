@@ -12,7 +12,7 @@ M.keymaps = {
       vim.lsp.buf.declaration({
         on_list = function(opts)
           if #opts.items > 1 then
-            require("mini.extra").pickers.lsp({ scope = "declaration" }, { reuse_win = true })
+            Snacks.picker.lsp_declarations()
           else
             vim.lsp.buf.declaration()
           end
@@ -27,7 +27,7 @@ M.keymaps = {
       vim.lsp.buf.definition({
         on_list = function(opts)
           if #opts.items > 1 then
-            require("mini.extra").pickers.lsp({ scope = "definition" }, { reuse_win = true })
+            Snacks.picker.lsp_definitions()
           else
             vim.lsp.buf.definition()
           end
@@ -39,9 +39,9 @@ M.keymaps = {
   { "K", vim.lsp.buf.hover, desc = "Hover" },
   { "]d", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
   { "[d", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
-  { "gi", function() require("mini.extra").pickers.lsp({ scope = "implementation" }, { reuse_win = true }) end, desc = "Goto Implementation" },
-  { "gr", function() require("mini.extra").pickers.lsp({ scope = "references" }, { reuse_win = true }) end, desc = "Goto References" },
-  { "gs", function() require("mini.extra").pickers.lsp({ scope = "document_symbol" }, { reuse_win = true }) end, desc = "Symbols" },
+  { "gi", function () Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+  { "gr", function () Snacks.picker.lsp_references() end, desc = "Goto References" },
+  { "gs", function () Snacks.picker.lsp_symbols() end, desc = "Symbols" },
 }
 
 ---@param buffer buffer
