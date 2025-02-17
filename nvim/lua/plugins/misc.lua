@@ -25,6 +25,9 @@ return {
       picker = {
         layout = {
           preview = false, -- use <a-p> to toggle preview
+          layout = {
+            backdrop = false,
+          },
         },
       },
     },
