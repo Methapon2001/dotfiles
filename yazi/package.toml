@@ -10,8 +10,8 @@ hash = "771f18427fb75fb19990ce602bb322f4"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "d1cd0a3"
-hash = "d1fee6d0f74cb52d4e031dc6b9207f31"
+rev = "f6939fb"
+hash = "8ae899541dc7accb680ee4fd382a09c"
 
 [[plugin.deps]]
 use = "Reledia/hexyl"
@@ -35,10 +35,10 @@ hash = "5c4d8080367dd2561a18c1cf5a1dd295"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "302c0d5"
+rev = "1a419b2"
 hash = "c34feed32d555e79ab9a0c0a7bdda2be"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
-rev = "302c0d5"
+rev = "1a419b2"
 hash = "e88895e8f8b7926f20946f273ecc7348"
