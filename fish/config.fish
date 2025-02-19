@@ -1,4 +1,4 @@
-set -gx EDITOR nvim 
+set -gx EDITOR nvim
 
 zoxide init --cmd cd fish | source
 starship init fish | source
