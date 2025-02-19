@@ -8,11 +8,7 @@ config.line_height = 1.25
 config.color_scheme = "Catppuccin Macchiato"
 config.initial_cols = 120
 config.initial_rows = 24
-config.max_fps = 120
-config.default_cursor_style = "BlinkingBlock"
-config.animation_fps = 1
-config.cursor_blink_ease_in = "Constant"
-config.cursor_blink_ease_out = "Constant"
+config.max_fps = 165
 
 config.enable_tab_bar = false
 
