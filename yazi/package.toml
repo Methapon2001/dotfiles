@@ -1,11 +1,11 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "beb586a"
+rev = "5186af7"
 hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "beb586a"
+rev = "5186af7"
 hash = "771f18427fb75fb19990ce602bb322f4"
 
 [[plugin.deps]]
@@ -25,12 +25,12 @@ hash = "40c20e6c1085d1f45309b9f148bf4f6e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:hide-preview"
-rev = "beb586a"
-hash = "55904f17e1053cfb91dacd9015a99f9d"
+rev = "5186af7"
+hash = "1e31898370b752e4faf335b762b3eeaf"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "beb586a"
+rev = "5186af7"
 hash = "5c4d8080367dd2561a18c1cf5a1dd295"
 
 [[flavor.deps]]
