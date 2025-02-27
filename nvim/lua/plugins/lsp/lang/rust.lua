@@ -17,11 +17,13 @@ return {
       servers = {
         rust_analyzer = {
           settings = {
-            ["rust_analyzer"] = {
+            ["rust-analyzer"] = {
               cargo = {
                 allFeatures = true,
-                command = "clippy",
-                extraArgs = { "--no-deps" },
+                loadOutDirsFromCheck = true,
+                buildScripts = {
+                  enable = true,
+                },
               },
               checkOnSave = true,
               procMacro = {
