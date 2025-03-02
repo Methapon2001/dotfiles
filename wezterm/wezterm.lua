@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("JetBrains Mono Nerd Font Mono")
+config.font = wezterm.font_with_fallback({ "JetBrains Mono Nerd Font Mono", "Noto Sans Thai" })
 config.font_size = 11.5
 config.line_height = 1.25
 config.color_scheme = "Catppuccin Macchiato"
