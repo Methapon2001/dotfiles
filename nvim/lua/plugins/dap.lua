@@ -43,7 +43,22 @@ return {
       { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = { "n", "v" } },
     },
     config = function(_, opts)
-      require("dapui").setup(opts)
+      local dap, dapui = require("dap"), require("dapui")
+
+      dapui.setup(opts)
+
+      dap.listeners.before.attach.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.launch.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated.dapui_config = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited.dapui_config = function()
+        dapui.close()
+      end
     end,
   },
   {
