@@ -5,10 +5,10 @@ return {
   init = function()
     if vim.fn.argc() == 1 then
       local argv = vim.fn.argv(0)
+      ---@diagnostic disable-next-line: param-type-mismatch
       local stat = vim.loop.fs_stat(argv)
       if stat and stat.type == "directory" then
         vim.fn.chdir(argv)
-        vim.cmd("bd")
       end
     end
   end,

@@ -12,13 +12,30 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("config.options")
-require("config.lazy")
+require("config.autocmds")
+require("config.keymaps")
+
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },
+  },
+  default = {
+    version = false,
+    lazy = false,
+  },
+  install = {
+    colorscheme = { "catppuccin", "habamax" },
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
+})
 
 local ok, _ = pcall(require, "catppuccin")
-
 if ok then
   vim.cmd.colorscheme("catppuccin")
 end
-
-require("config.autocmds")
-require("config.keymaps")
