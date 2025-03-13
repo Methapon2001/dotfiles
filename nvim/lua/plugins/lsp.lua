@@ -57,6 +57,7 @@ local function on_attach(_, buffer)
   end
 end
 
+---@type LazySpec[]
 return {
   {
     "williamboman/mason.nvim",
@@ -71,11 +72,9 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      {
-        { "folke/neodev.nvim", opts = {} },
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-      },
+      { "folke/neodev.nvim", opts = {} },
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
     },
     opts = {
       diagnostics = {

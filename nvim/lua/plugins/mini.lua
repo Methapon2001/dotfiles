@@ -1,3 +1,4 @@
+---@type LazySpec[]
 return {
   { "echasnovski/mini.statusline", event = "VeryLazy", opts = {} },
   { "echasnovski/mini.tabline", event = "VeryLazy", opts = {} },
