@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "ceb053f"
-hash = "9dce00232a0e0e2502565c7aa2b0ed4e"
+rev = "cb6165b"
+hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "ceb053f"
-hash = "bcbf72738d4b7fb9a03cac84465b9ba4"
+rev = "cb6165b"
+hash = "ee5fa7e64db72d6b10c2315de97c9cc7"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
@@ -14,31 +14,21 @@ rev = "6c639b4"
 hash = "5614c46d5de76623c283d415bfac8025"
 
 [[plugin.deps]]
-use = "Reledia/hexyl"
-rev = "228a9ef"
-hash = "cdc65cfe4e60e1bf5afe5769d074fa9c"
-
-[[plugin.deps]]
-use = "GrzegorzKozub/mdcat"
-rev = "d3d5089"
-hash = "40c20e6c1085d1f45309b9f148bf4f6e"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:hide-preview"
-rev = "ceb053f"
+rev = "cb6165b"
 hash = "53f826884e2c7e521cecc492a7f31d7e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "ceb053f"
+rev = "cb6165b"
 hash = "dd97eede8e20e59cd2604e8006e470e2"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "b929df6"
+rev = "68326b4"
 hash = "3ec21bcfd2735cfcbab61faaf43e59e4"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
-rev = "b929df6"
+rev = "68326b4"
 hash = "7780fbbc8965da5a31a76a0dcd4d1216"
