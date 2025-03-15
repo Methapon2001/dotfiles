@@ -1,3 +1,5 @@
+set -g fish_greeting
+
 set -gx EDITOR nvim
 
 zoxide init --cmd cd fish | source
