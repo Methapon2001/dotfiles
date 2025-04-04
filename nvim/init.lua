@@ -34,8 +34,3 @@ require("lazy").setup({
     notify = false,
   },
 })
-
-local ok, _ = pcall(require, "catppuccin")
-if ok then
-  vim.cmd.colorscheme("catppuccin")
-end
