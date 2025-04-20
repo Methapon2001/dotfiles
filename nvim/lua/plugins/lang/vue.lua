@@ -17,6 +17,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
+      if type(opts.servers.vtsls.filetypes) ~= "table" then
+        opts.servers.vtsls.filetypes = {}
+      end
+
       table.insert(opts.servers.vtsls.filetypes, "vue")
       require("utils").extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
         {
