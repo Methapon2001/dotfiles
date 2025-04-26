@@ -1,26 +1,21 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "b12a9ab"
+rev = "4b027c7"
 hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "b12a9ab"
+rev = "4b027c7"
 hash = "e0ada736ea676c2bbb3ec705a49526ef"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "c070754"
-hash = "ebe49da58741aa3bf06c49ee394e0a5a"
-
-[[plugin.deps]]
-use = "yazi-rs/plugins:hide-preview"
-rev = "b12a9ab"
-hash = "53f826884e2c7e521cecc492a7f31d7e"
+rev = "6fde3b2"
+hash = "7ddb7a790746fd91ecdd0350cc5a5d8c"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "b12a9ab"
+rev = "4b027c7"
 hash = "dd97eede8e20e59cd2604e8006e470e2"
 
 [[flavor.deps]]
