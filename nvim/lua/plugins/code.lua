@@ -5,6 +5,7 @@ return {
     build = "cargo +nightly build --release",
     dependencies = "rafamadriz/friendly-snippets",
     lazy = false,
+    ---@type blink.cmp.Config
     opts = {
       keymap = { preset = "enter" },
       completion = {
@@ -20,6 +21,9 @@ return {
           },
         },
         documentation = { auto_show = true },
+      },
+      signature = {
+        enabled = true,
       },
     },
   },
