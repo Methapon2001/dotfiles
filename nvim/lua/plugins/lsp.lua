@@ -157,6 +157,7 @@ return {
 
       mason_lsp.setup({
         handlers = { setup },
+        automatic_enable = true,
         automatic_installation = true,
         ensure_installed = ensure_installed,
       })
