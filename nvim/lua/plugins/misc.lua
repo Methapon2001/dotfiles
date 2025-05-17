@@ -1,4 +1,5 @@
----@type LazySpec[]
+---@module "lazy.types"
+---@type LazySpec|LazySpec[]
 return {
   { "nvim-lua/plenary.nvim", lazy = true },
   { "j-hui/fidget.nvim", opts = {} },
@@ -6,6 +7,8 @@ return {
   {
     "folke/snacks.nvim",
     lazy = false,
+    ---@module "snacks"
+    ---@type snacks.Config
     opts = {
       input = {
         win = {

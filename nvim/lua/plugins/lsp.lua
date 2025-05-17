@@ -10,6 +10,7 @@ local keymaps = {
       vim.lsp.buf.declaration({
         on_list = function(opts)
           if #opts.items > 1 then
+            ---@module "snacks"
             Snacks.picker.lsp_declarations()
           else
             vim.lsp.buf.declaration()
@@ -25,6 +26,7 @@ local keymaps = {
       vim.lsp.buf.definition({
         on_list = function(opts)
           if #opts.items > 1 then
+            ---@module "snacks"
             Snacks.picker.lsp_definitions()
           else
             vim.lsp.buf.definition()
@@ -42,7 +44,7 @@ local keymaps = {
   { "gs", function () Snacks.picker.lsp_symbols() end, desc = "Symbols" },
 }
 
----@param buffer buffer
+---@param buffer number
 local function on_attach(_, buffer)
   for _, keymap in pairs(keymaps) do
     local opts = { buffer } ---@type vim.keymap.set.Opts
@@ -57,7 +59,8 @@ local function on_attach(_, buffer)
   end
 end
 
----@type LazySpec[]
+---@module "lazy.types"
+---@type LazySpec|LazySpec[]
 return {
   {
     "williamboman/mason.nvim",

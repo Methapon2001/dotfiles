@@ -1,4 +1,5 @@
----@type LazySpec[]
+---@module "lazy.types"
+---@type LazySpec|LazySpec[]
 return {
   {
     "mfussenegger/nvim-dap",

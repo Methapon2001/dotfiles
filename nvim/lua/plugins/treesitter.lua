@@ -1,4 +1,5 @@
----@type LazySpec[]
+---@module "lazy.types"
+---@type LazySpec|LazySpec[]
 return {
   {
     "nvim-treesitter/nvim-treesitter",
