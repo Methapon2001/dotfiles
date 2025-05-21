@@ -133,6 +133,7 @@ return {
           server_opts = server_opts == true and {} or server_opts
           if not vim.tbl_contains(mason_lsp_servers, server) then
             vim.lsp.config(server, server_opts)
+            vim.lsp.enable(server)
           else
             ensure_installed[#ensure_installed + 1] = server
           end
