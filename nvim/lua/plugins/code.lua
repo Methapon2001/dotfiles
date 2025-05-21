@@ -19,6 +19,7 @@ return {
             return ctx.mode ~= "cmdline"
           end,
           draw = {
+            columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "source_name" } },
             treesitter = { "lsp" },
           },
         },
