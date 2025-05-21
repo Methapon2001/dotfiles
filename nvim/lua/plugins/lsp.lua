@@ -112,7 +112,6 @@ return {
           },
         },
       },
-      setup = {},
     },
     config = function(_, opts)
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
@@ -133,12 +132,6 @@ return {
         local server_opts = vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
         }, servers[server] or {})
-
-        if opts.setup[server] then
-          if opts.setup[server](server, server_opts) then
-            return
-          end
-        end
 
         vim.lsp.config(server, server_opts)
       end
