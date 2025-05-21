@@ -20,6 +20,7 @@ return {
               experimental = {
                 completion = {
                   enableServerSideFuzzyMatch = true,
+                  entriesLimit = 100,
                 },
               },
             },
