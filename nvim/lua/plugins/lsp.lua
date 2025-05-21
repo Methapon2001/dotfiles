@@ -129,7 +129,7 @@ return {
 
       local servers = opts.servers
 
-      local function setup(server)
+      local function configure(server)
         local server_opts = vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
         }, servers[server] or {})
@@ -140,7 +140,7 @@ return {
           end
         end
 
-        require("lspconfig")[server].setup(server_opts)
+        vim.lsp.config(server, server_opts)
       end
 
       local mason_lsp = require("mason-lspconfig")
@@ -151,7 +151,7 @@ return {
         if server_opts then
           server_opts = server_opts == true and {} or server_opts
           if not vim.tbl_contains(mason_lsp_servers, server) then
-            setup(server)
+            configure(server)
           else
             ensure_installed[#ensure_installed + 1] = server
           end
@@ -159,7 +159,6 @@ return {
       end
 
       mason_lsp.setup({
-        handlers = { setup },
         automatic_enable = true,
         automatic_installation = true,
         ensure_installed = ensure_installed,
