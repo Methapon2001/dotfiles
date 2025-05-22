@@ -131,17 +131,16 @@ return {
       for server, server_opts in pairs(opts.servers) do
         if server_opts then
           server_opts = server_opts == true and {} or server_opts
-          if not vim.tbl_contains(mason_lsp_servers, server) then
-            vim.lsp.config(server, server_opts)
-            vim.lsp.enable(server)
-          else
+          if vim.tbl_contains(mason_lsp_servers, server) then
             ensure_installed[#ensure_installed + 1] = server
           end
+          vim.lsp.config(server, server_opts)
+          vim.lsp.enable(server)
         end
       end
 
       mason_lsp.setup({
-        automatic_enable = true,
+        automatic_enable = false,
         automatic_installation = true,
         ensure_installed = ensure_installed,
       })
