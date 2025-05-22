@@ -5,7 +5,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        volar = {
+        vue_ls = {
           init_options = {
             vue = {
               hybridMode = true,
@@ -29,7 +29,6 @@ return {
           name = "@vue/typescript-plugin",
           location = require("utils").get_pkg_path("vue-language-server", "/node_modules/@vue/language-server"),
           languages = { "vue" },
-          configNamespace = "typescript",
           enableForWorkspaceTypeScriptVersions = true,
         },
       })
