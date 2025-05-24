@@ -135,12 +135,11 @@ return {
             ensure_installed[#ensure_installed + 1] = server
           end
           vim.lsp.config(server, server_opts)
-          vim.lsp.enable(server)
         end
       end
 
       mason_lsp.setup({
-        automatic_enable = false,
+        automatic_enable = true,
         automatic_installation = true,
         ensure_installed = ensure_installed,
       })
