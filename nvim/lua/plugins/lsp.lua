@@ -79,6 +79,7 @@ return {
       "mason-org/mason-lspconfig.nvim",
     },
     opts = {
+      ---@type vim.diagnostic.Opts
       diagnostics = {
         underline = true,
         update_in_insert = false,
