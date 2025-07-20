@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.color_scheme = "Catppuccin Macchiato"
 
 -- font
-config.font = wezterm.font_with_fallback({ "JetBrainsMono Nerd Font Mono", "Noto Sans Thai" })
+config.font = wezterm.font_with_fallback({ "JetBrainsMono Nerd Font", "Noto Sans Thai" })
 config.font_size = 11.5
 config.line_height = 1.15
 
