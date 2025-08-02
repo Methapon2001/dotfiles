@@ -31,7 +31,6 @@ return {
       },
       snacks = true,
       treesitter = true,
-      treesitter_context = true,
     },
   },
   config = function(_, opts)
