@@ -74,10 +74,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile", "BufWritePre" },
-    dependencies = {
-      "mason-org/mason.nvim",
-      "mason-org/mason-lspconfig.nvim",
-    },
+    dependencies = { "mason-org/mason.nvim" },
     opts = {
       ---@type vim.diagnostic.Opts
       diagnostics = {
@@ -126,25 +123,13 @@ return {
         end,
       })
 
-      local mason_lsp = require("mason-lspconfig")
-      local mason_lsp_servers = vim.tbl_keys(require("mason-lspconfig").get_mappings().lspconfig_to_package)
-
-      local ensure_installed = {} ---@type string[]
       for server, server_opts in pairs(opts.servers) do
         if server_opts then
           server_opts = server_opts == true and {} or server_opts
-          if vim.tbl_contains(mason_lsp_servers, server) then
-            ensure_installed[#ensure_installed + 1] = server
-          end
           vim.lsp.config(server, server_opts)
+          vim.lsp.enable(server)
         end
       end
-
-      mason_lsp.setup({
-        automatic_enable = true,
-        automatic_installation = true,
-        ensure_installed = ensure_installed,
-      })
     end,
   },
   {
