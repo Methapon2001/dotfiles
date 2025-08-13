@@ -33,6 +33,14 @@ return {
     end,
   },
   {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        taplo = {},
+      },
+    },
+  },
+  {
     "Saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
     opts = {
