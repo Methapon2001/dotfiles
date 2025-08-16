@@ -64,3 +64,6 @@ opt.splitkeep = "screen"
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
+
+-- Disable SQL ctrl-c omni completion
+vim.g.omni_sql_no_default_maps = 1
