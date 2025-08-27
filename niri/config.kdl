@@ -49,7 +49,7 @@ output "ViewSonic Corporation VG1655 W3W215220087" {
 
 
 layout {
-    gaps 20
+    gaps 18
     center-focused-column "never"
 
     focus-ring {
