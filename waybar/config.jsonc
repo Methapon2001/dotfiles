@@ -1,0 +1,11 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "spacing": 0,
+
+  "include": ["~/.config/waybar/modules.jsonc"],
+
+  "modules-left": ["niri/workspaces", "niri/window"],
+  "modules-center": ["wlr/taskbar"],
+  "modules-right": ["tray", "niri/language", "clock"]
+}
