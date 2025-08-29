@@ -1,16 +1,16 @@
 * {
   font-family: "Open Sans", "Font Awesome 6 Free";
   font-weight: normal;
+  border-radius: 7px;
 }
 
 tooltip {
-  border-radius: 7px;
-  background-color: #0f1117;
+  background-color: rgba(30, 34, 42, 0.97);
   color: #c0c0c0;
 }
 
 #waybar {
-  background-color: #0f1117;
+  background-color: rgba(30, 34, 42, 0.97);
   font-size: 14px;
 }
 
@@ -21,7 +21,6 @@ tooltip {
 #workspaces {
   background: #1e222a;
   font-weight: bold;
-  border-radius: 0px;
   color: #e0e0e0;
 }
 
@@ -29,6 +28,20 @@ tooltip {
   font-weight: 800;
   background: #ffbc9b;
   color: #1e222a;
+}
+
+#taskbar {
+  padding: 2px 0;
+}
+
+#taskbar button {
+  padding: 4px 4px;
+}
+
+#taskbar button.active {
+  padding-bottom: 3px;
+  border-bottom-width: 2px;
+  border-bottom-color: #ffbc9b;
 }
 
 #clock,
@@ -40,7 +53,6 @@ tooltip {
 #battery,
 #tray,
 #language {
-  background-color: #1e222a;
   font-size: 14px;
   font-weight: 600;
   color: #c0c0c0;
@@ -48,11 +60,11 @@ tooltip {
 }
 
 #clock {
+  font-weight: 700;
   padding: 0px 8px;
 }
 
 #battery.critical:not(.charging) {
-  background-color: #e65100;
   color: #ffffff;
   animation: blink 0.5s linear infinite alternate;
 }
