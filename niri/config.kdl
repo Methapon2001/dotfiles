@@ -13,6 +13,7 @@ spawn-at-startup "~/.config/niri/scripts/waybar.sh"
 environment {
     QT_QPA_PLATFORM "wayland"
     QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
 
     DISPLAY ":0"
 }
@@ -112,7 +113,7 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "5%-"; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "s" "+5%"; }
 
-    Mod+O repeat=false { toggle-overview; }
+    Mod+Tab repeat=false { toggle-overview; }
 
     Mod+Q { close-window; }
 
