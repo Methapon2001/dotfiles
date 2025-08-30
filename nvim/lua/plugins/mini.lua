@@ -1,14 +1,14 @@
 ---@module "lazy.types"
 ---@type LazySpec|LazySpec[]
 return {
-  { "echasnovski/mini.statusline", event = "VeryLazy", opts = {} },
-  { "echasnovski/mini.tabline", event = "VeryLazy", opts = {} },
-  { "echasnovski/mini.pairs", event = { "BufReadPre", "BufNewFile" }, opts = {} },
-  { "echasnovski/mini.surround", event = { "BufReadPre", "BufNewFile" }, opts = {} },
-  { "echasnovski/mini.splitjoin", event = { "BufReadPre", "BufNewFile" }, opts = {} },
-  { "echasnovski/mini.move", event = { "BufReadPre", "BufNewFile" }, opts = {} },
+  { "nvim-mini/mini.statusline", event = "VeryLazy", opts = {} },
+  { "nvim-mini/mini.tabline", event = "VeryLazy", opts = {} },
+  { "nvim-mini/mini.pairs", event = { "BufReadPre", "BufNewFile" }, opts = {} },
+  { "nvim-mini/mini.surround", event = { "BufReadPre", "BufNewFile" }, opts = {} },
+  { "nvim-mini/mini.splitjoin", event = { "BufReadPre", "BufNewFile" }, opts = {} },
+  { "nvim-mini/mini.move", event = { "BufReadPre", "BufNewFile" }, opts = {} },
   {
-    "echasnovski/mini.bufremove",
+    "nvim-mini/mini.bufremove",
     event = { "BufReadPre", "BufNewFile" },
     -- stylua: ignore
     keys = {
@@ -17,7 +17,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.indentscope",
+    "nvim-mini/mini.indentscope",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
       symbol = "│",
@@ -25,14 +25,14 @@ return {
     },
   },
   {
-    "echasnovski/mini.cursorword",
+    "nvim-mini/mini.cursorword",
     event = { "BufReadPre", "BufNewFile" },
     opts = { delay = 500 },
   },
   {
-    "echasnovski/mini.hipatterns",
+    "nvim-mini/mini.hipatterns",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = { "echasnovski/mini.extra" },
+    dependencies = { "nvim-mini/mini.extra" },
     opts = function()
       local words = require("mini.extra").gen_highlighter.words
       return {
@@ -46,10 +46,10 @@ return {
     end,
   },
   {
-    "echasnovski/mini.ai",
+    "nvim-mini/mini.ai",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      "echasnovski/mini.extra",
+      "nvim-mini/mini.extra",
       "nvim-treesitter-textobjects",
     },
     opts = function()
@@ -73,5 +73,5 @@ return {
       }
     end,
   },
-  { "echasnovski/mini.icons", opts = {} },
+  { "nvim-mini/mini.icons", opts = {} },
 }
