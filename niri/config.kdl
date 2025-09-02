@@ -2,7 +2,6 @@
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
-spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww-daemon"
 
 spawn-at-startup "nmapplet" "--indicator"
@@ -14,8 +13,6 @@ environment {
     QT_QPA_PLATFORM "wayland"
     QT_QPA_PLATFORMTHEME "qt6ct"
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-
-    DISPLAY ":0"
 }
 
 input {
