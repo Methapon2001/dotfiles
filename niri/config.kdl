@@ -71,9 +71,13 @@ hotkey-overlay {
     skip-at-startup
 }
 
+cursor {
+    xcursor-theme "bloom"
+    xcursor-size 24
+}
 
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    match app-id="foot"
 
     default-column-width {}
     opacity 0.96
@@ -94,7 +98,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Ctrl+Alt+T hotkey-overlay-title="Open a Terminal" { spawn "wezterm"; }
+    Ctrl+Alt+T hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Alt+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "swaylock"; }
 
