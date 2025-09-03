@@ -1,0 +1,9 @@
+default-timeout=10000
+border-radius=7
+background-color=#1e222af7
+text-color=#e0e0e0ff
+border-color=#ffbc9bff
+progress-color=over #3e8fb0ff
+
+[urgency=high]
+border-color=#eb6f92ff
