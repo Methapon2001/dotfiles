@@ -5,6 +5,8 @@ set -gx EDITOR nvim
 zoxide init --cmd cd fish | source
 starship init fish | source
 
+fish_config theme choose "Rosé Pine Moon"
+
 alias ls="eza --group-directories-first --icons always"
 alias l="eza --group-directories-first -l"
 alias la="eza --group-directories-first -a"
