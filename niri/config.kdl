@@ -72,7 +72,7 @@ hotkey-overlay {
 }
 
 cursor {
-    xcursor-theme "bloom"
+    xcursor-theme "capitaine-cursors"
     xcursor-size 24
 }
 
