@@ -73,6 +73,8 @@ return {
               ["<c-space>"] = "next",
               ["<bs>"] = "prev",
             },
+            --- No label jump.
+            labels = "",
           })
         end,
         desc = "Treesitter Incremental Selection",
