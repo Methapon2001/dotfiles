@@ -94,6 +94,7 @@ return {
           },
         },
       },
+      ---@type table<string, vim.lsp.Config>
       servers = {
         lua_ls = {
           settings = {
