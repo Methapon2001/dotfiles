@@ -24,7 +24,7 @@ keybinds {
 
 show_startup_tips false
 
-theme "catppuccin-macchiato"
+theme "rose-pine"
 
 pane_frames false
 
