@@ -3,24 +3,24 @@ layout {
         pane
         pane size=1 borderless=true {
             plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
-                format_left "{mode}#[fg=#89b4fa,bg=#181825,bold] {session}"
+                format_left "{mode}#[fg=#89b4fa,bg=#212135,bold] {session}"
                 format_center "{tabs}"
-                format_right "#[fg=#424554,bg=#181825] {datetime}"
-                format_space "#[bg=#181825]"
+                format_right "#[fg=#424554,bg=#212135] {datetime}"
+                format_space "#[bg=#212135]"
 
                 mode_normal "#[bg=#89b4fa] "
                 mode_tmux "#[bg=#ffc387] "
 
-                tab_active "#[fg=#9399b2,bg=#181825,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
-                tab_normal "#[fg=#424554,bg=#181825] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
-                tab_rename "#[fg=#ffc387,bg=#181825,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
-                tab_separator "#[fg=#424554,bg=#181825,bold] | "
+                tab_active "#[fg=#9399b2,bg=#212135,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+                tab_normal "#[fg=#424554,bg=#212135] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+                tab_rename "#[fg=#ffc387,bg=#212135,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+                tab_separator "#[fg=#424554,bg=#212135,bold] | "
 
                 tab_sync_indicator ""
                 tab_fullscreen_indicator "󰊓"
                 tab_floating_indicator "󰹙"
 
-                datetime "#[fg=#6c7086,bg=#181825] {format} "
+                datetime "#[fg=#6c7086,bg=#212135] {format} "
                 datetime_format "%d %b %Y - %H:%M"
                 datetime_timezone "Asia/Bangkok"
             }
