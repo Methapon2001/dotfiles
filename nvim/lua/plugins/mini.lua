@@ -50,7 +50,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "nvim-mini/mini.extra",
-      "nvim-treesitter-textobjects",
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
     opts = function()
       local ai = require("mini.ai")

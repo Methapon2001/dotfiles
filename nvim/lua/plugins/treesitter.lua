@@ -3,20 +3,17 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+    branch = "main",
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    cmd = { "TSUpdateSync" },
-    keys = {
-      { "<c-space>", desc = "Increment selection" },
-      { "<bs>", desc = "Decrement selection", mode = "x" },
-    },
-    opts = {
-      highlight = { enable = true },
-      indent = { enable = true },
-      ensure_installed = {
+    cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
+    build = ":TSUpdate",
+    config = function()
+      local treesitter = require("nvim-treesitter")
+
+      local languages = {
         "bash",
         "c",
         "html",
@@ -40,29 +37,53 @@ return {
         "svelte",
         "toml",
         "rust",
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<c-space>",
-          node_incremental = "<c-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
-      textobjects = {
-        move = {
-          enable = true,
-          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer" },
-          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer" },
-          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer" },
-          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer" },
-        },
+      }
+
+      local not_installed = vim.tbl_filter(function(lang)
+        return not vim.tbl_contains(treesitter.get_installed("parsers"), lang)
+      end, languages)
+
+      if #not_installed > 0 then
+        treesitter.install(not_installed, { summary = true })
+      end
+
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match)
+          if vim.tbl_contains(treesitter.get_installed("parsers"), lang) then
+            vim.treesitter.start()
+          end
+        end,
+      })
+    end,
+  },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@module "flash.nvim"
+    ---@type Flash.Config
+    opts = {},
+    keys = {
+      {
+        "<c-space>",
+        mode = { "n", "o", "x" },
+        function()
+          require("flash").treesitter({
+            actions = {
+              ["<c-space>"] = "next",
+              ["<bs>"] = "prev",
+            },
+          })
+        end,
+        desc = "Treesitter Incremental Selection",
       },
     },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "main",
+    event = "VeryLazy",
+    opts = {},
   },
   {
     "windwp/nvim-ts-autotag",
