@@ -3,24 +3,24 @@ layout {
         pane
         pane size=1 borderless=true {
             plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
-                format_left "{mode}#[fg=#6e6a86,bg=#21202e,bold] {session}"
+                format_left "{mode}#[fg=#908caa,bg=#21202e,bold] {session}"
                 format_center "{tabs}"
                 format_right "#[fg=#424554,bg=#21202e] {datetime}"
                 format_space "#[bg=#21202e]"
 
                 mode_normal "#[bg=#ebbcba] "
-                mode_tmux "#[bg=#c4a7e7] "
+                mode_tmux "#[bg=#9ccfd8] "
 
                 tab_active "#[fg=#e0def4,bg=#21202e,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
                 tab_normal "#[fg=#6e6a86,bg=#21202e] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
-                tab_rename "#[fg=#f6c177,bg=#21202e,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+                tab_rename "#[fg=#ebbcba,bg=#21202e,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
                 tab_separator "#[fg=#424554,bg=#21202e,bold] | "
 
                 tab_sync_indicator ""
                 tab_fullscreen_indicator "󰊓"
                 tab_floating_indicator "󰹙"
 
-                datetime "#[fg=#6e6a86,bg=#21202e] {format} "
+                datetime "#[fg=#908caa,bg=#21202e] {format} "
                 datetime_format "%d %b %Y - %H:%M"
                 datetime_timezone "Asia/Bangkok"
             }
