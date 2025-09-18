@@ -3,17 +3,17 @@ layout {
         pane
         pane size=1 borderless=true {
             plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
-                format_left "{mode}#[fg=#9ccfd8,bg=#21202e,bold] {session}"
+                format_left "{mode}#[fg=#6e6a86,bg=#21202e,bold] {session}"
                 format_center "{tabs}"
                 format_right "#[fg=#424554,bg=#21202e] {datetime}"
                 format_space "#[bg=#21202e]"
 
-                mode_normal "#[bg=#9ccfd8] "
-                mode_tmux "#[bg=#ffc387] "
+                mode_normal "#[bg=#ebbcba] "
+                mode_tmux "#[bg=#c4a7e7] "
 
                 tab_active "#[fg=#e0def4,bg=#21202e,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
                 tab_normal "#[fg=#6e6a86,bg=#21202e] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
-                tab_rename "#[fg=#ffc387,bg=#21202e,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+                tab_rename "#[fg=#f6c177,bg=#21202e,bold] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
                 tab_separator "#[fg=#424554,bg=#21202e,bold] | "
 
                 tab_sync_indicator ""

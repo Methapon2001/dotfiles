@@ -1,5 +1,5 @@
 [username]
-style_user = "blue bold"
+style_user = "cyan bold"
 style_root = "white bold"
 show_always = true
 disabled = false
