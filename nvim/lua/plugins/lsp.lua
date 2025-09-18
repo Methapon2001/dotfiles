@@ -146,7 +146,7 @@ return {
         "json-lsp",
 
         -- JavaScript/TypeScript
-        "vts-ls",
+        "vtsls",
         "svelte-language-server",
         "vue-language-server",
 
