@@ -96,6 +96,7 @@ return {
       },
       ---@type table<string, vim.lsp.Config>
       servers = {
+        typos_lsp = {},
         lua_ls = {
           settings = {
             Lua = {
@@ -123,6 +124,51 @@ return {
           on_attach(client, buffer)
         end,
       })
+
+      local mason_packages = {
+        "typos-lsp",
+
+        -- Lua
+        "lua-language-server",
+        "stylua",
+
+        -- Python
+        "basedpyright",
+        "ruff",
+
+        -- Rust (rust-analyzer is installed by rustup)
+        "taplo",
+
+        -- C, C++, Rust, Zig Debugger
+        "codelldb",
+
+        -- Json
+        "json-lsp",
+
+        -- JavaScript/TypeScript
+        "vts-ls",
+        "svelte-language-server",
+        "vue-language-server",
+
+        --- Formatter for various languages.
+        "prettier",
+      }
+
+      for _, package_name in ipairs(mason_packages) do
+        local ok, pkg = pcall(require("mason-registry").get_package, package_name)
+        if ok and not pkg:is_installed() and not pkg:is_installing() then
+          pkg:install(
+            { version = pkg:get_latest_version() },
+            vim.schedule_wrap(function(success)
+              if success then
+                vim.notify(("[mason] %s was successfully installed"):format(package_name))
+              else
+                vim.notify(("[mason] failed to install %s."):format(package_name), vim.log.levels.ERROR)
+              end
+            end)
+          )
+        end
+      end
 
       for server, server_opts in pairs(opts.servers) do
         if server_opts then
