@@ -96,7 +96,6 @@ return {
       },
       ---@type table<string, vim.lsp.Config>
       servers = {
-        typos_lsp = {},
         lua_ls = {
           settings = {
             Lua = {
@@ -177,6 +176,9 @@ return {
           vim.lsp.enable(server)
         end
       end
+
+      -- Enable lsp server explicitly (usually for using installed lsp without additional configuration).
+      vim.lsp.enable({ "typos_lsp" })
     end,
   },
   {
