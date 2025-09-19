@@ -138,6 +138,10 @@ return {
         -- Rust (rust-analyzer is installed by rustup)
         "taplo",
 
+        -- C#
+        -- "csharp-language-server",
+        -- "csharpier",
+
         -- C, C++, Rust, Zig Debugger
         "codelldb",
 
@@ -149,7 +153,7 @@ return {
         "svelte-language-server",
         "vue-language-server",
 
-        --- Formatter for various languages.
+        -- Formatter for various languages.
         "prettier",
       }
 
