@@ -1,20 +1,10 @@
----@module "lazy.types"
----@type LazySpec[]
 return {
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        csharp_ls = {},
-      },
-    },
-  },
-  {
-    "decodetalkers/csharpls-extended-lsp.nvim",
+    "seblyng/roslyn.nvim",
     ft = "cs",
-    config = function()
-      require("csharpls_extended").buf_read_cmd_bind()
-    end,
+    ---@module 'roslyn.config'
+    ---@type RoslynNvimConfig
+    opts = {},
   },
   {
     "stevearc/conform.nvim",
