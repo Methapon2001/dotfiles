@@ -1,6 +1,8 @@
 keybinds {
     normal clear-defaults=true {
         bind "Ctrl b" { SwitchToMode "Tmux"; }
+        bind "Shift PageUp" { PageScrollUp; }
+        bind "Shift PageDown" { PageScrollDown; }
     }
 
     tmux {
