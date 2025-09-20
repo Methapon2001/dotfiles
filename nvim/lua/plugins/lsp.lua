@@ -66,7 +66,12 @@ return {
     "mason-org/mason.nvim",
     cmd = "Mason",
     build = ":MasonUpdate",
-    opts = {},
+    opts = {
+      registries = {
+        "github:mason-org/mason-registry",
+        "github:crashdummyy/mason-registry",
+      },
+    },
     keys = {
       { "<leader>m", "<cmd>Mason<cr>", desc = "Mason" },
     },
@@ -139,7 +144,7 @@ return {
         "taplo",
 
         -- C#
-        -- "csharp-language-server",
+        -- "roslyn",
         -- "csharpier",
 
         -- C, C++, Rust, Zig Debugger
