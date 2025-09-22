@@ -46,7 +46,7 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
-    config = function()
+    opts = function()
       local dap = require("dap")
 
       local adapter = {
