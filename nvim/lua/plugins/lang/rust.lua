@@ -5,8 +5,13 @@ return {
     "mrcjkb/rustaceanvim",
     lazy = false, -- This plugin is already lazy
     init = function()
+      ---@module "rustaceanvim"
+      ---@type rustaceanvim.Opts
       vim.g.rustaceanvim = {
         server = {
+          on_attach = function()
+            vim.lsp.inlay_hint.enable()
+          end,
           default_settings = {
             ["rust-analyzer"] = {
               cargo = {
