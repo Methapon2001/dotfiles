@@ -75,11 +75,6 @@ hotkey-overlay {
     skip-at-startup
 }
 
-cursor {
-    xcursor-theme "capitaine-cursors"
-    xcursor-size 24
-}
-
 window-rule {
     match app-id="foot"
 
