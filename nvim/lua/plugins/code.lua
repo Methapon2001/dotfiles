@@ -24,12 +24,4 @@ return {
       },
     },
   },
-  {
-    "jeangiraldoo/codedocs.nvim",
-    opts = {},
-    -- stylua: ignore
-    keys = {
-      { "<leader>k", function() require("codedocs").insert_docs() end, desc = "Inserts a docstring into the buffer" }
-    },
-  },
 }
