@@ -5,6 +5,13 @@ local keymaps = {
   { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action" },
   { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
   {
+    "<leader>th",
+    function ()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    end,
+    desc = "Toggle Inlay Hints"
+  },
+  {
     "gD",
     function()
       vim.lsp.buf.declaration({
@@ -67,10 +74,10 @@ return {
     cmd = "Mason",
     build = ":MasonUpdate",
     opts = {
-      registries = {
-        "github:mason-org/mason-registry",
-        "github:crashdummyy/mason-registry",
-      },
+      -- registries = {
+      --   "github:mason-org/mason-registry",
+      --   "github:crashdummyy/mason-registry",
+      -- },
     },
     keys = {
       { "<leader>m", "<cmd>Mason<cr>", desc = "Mason" },
