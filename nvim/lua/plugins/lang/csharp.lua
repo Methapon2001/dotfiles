@@ -6,6 +6,11 @@ return {
     opts = {
       servers = {
         roslyn = {
+          on_attach = function()
+            if not vim.lsp.inlay_hint.is_enabled() then
+              vim.lsp.inlay_hint.enable()
+            end
+          end,
           settings = {
             ["csharp|inlay_hints"] = {
               csharp_enable_inlay_hints_for_implicit_object_creation = true,
