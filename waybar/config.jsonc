@@ -9,5 +9,13 @@
 
   "modules-left": ["niri/workspaces", "niri/window"],
   "modules-center": ["wlr/taskbar"],
-  "modules-right": ["tray", "niri/language", "pulseaudio", "battery", "clock"]
+  "modules-right": [
+    "tray",
+    "niri/language",
+    "pulseaudio",
+    "battery",
+    "backlight",
+    "clock",
+    "custom/exit"
+  ]
 }

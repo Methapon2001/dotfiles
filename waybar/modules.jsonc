@@ -29,7 +29,7 @@
 
   "tray": {
     "icon-size": 16,
-    "spacing": 8
+    "spacing": 4
   },
 
   "pulseaudio/slider": {
@@ -43,8 +43,6 @@
     "format-bluetooth": "{icon}   {volume}%",
     "format-muted": "",
     "format-icons": {
-      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
       "headphone": "",
       "headset": "",
       "phone": "",
@@ -59,7 +57,7 @@
   },
 
   "clock": {
-    "format": "   {:%a,  %d %b,  %R}",
+    "format": "   {:%a, %d %b, %R}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -83,5 +81,33 @@
     },
     "format": "{icon} {capacity}%",
     "format-icons": [" ", " ", " ", " ", " "]
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ],
+    "scroll-step": 5.0
+  },
+
+  "custom/exit": {
+    "format": " 󰐥 ",
+    "on-click": "wleave",
+    "tooltip-format": "Power Menu"
   }
 }

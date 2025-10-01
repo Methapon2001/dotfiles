@@ -56,17 +56,18 @@ tooltip {
   font-size: 14px;
   font-weight: 600;
   color: #c0c0c0;
-  padding: 0 8px;
-}
-
-#clock {
-  font-weight: 700;
-  padding: 0px 8px;
+  padding: 0 6px;
 }
 
 #battery.critical:not(.charging) {
   color: #ffffff;
   animation: blink 0.5s linear infinite alternate;
+}
+
+#custom-exit {
+  font-size: 18px;
+  font-weight: 800;
+  padding: 0px 8px;
 }
 
 @keyframes blink {
