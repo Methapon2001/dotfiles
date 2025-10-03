@@ -1,9 +1,10 @@
 -- stylua: ignore
 local keymaps = {
-  { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
   { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
   { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action" },
   { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
+  { "<leader>cc", vim.lsp.codelens.run, desc = "Run CodeLens" },
+  { "<leader>cC", vim.lsp.codelens.refresh, desc = "Refresh & Display CodeLens" },
   {
     "<leader>th",
     function ()
@@ -51,8 +52,18 @@ local keymaps = {
   { "gs", function () Snacks.picker.lsp_symbols() end, desc = "Symbols" },
 }
 
+---@param client vim.lsp.Client|nil
 ---@param buffer number
-local function on_attach(_, buffer)
+local function on_attach(client, buffer)
+  -- if client and client:supports_method("textDocument/codeLens", buffer) then
+  --   vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+  --     buffer,
+  --     callback = function()
+  --       vim.lsp.codelens.refresh({ bufnr = buffer })
+  --     end,
+  --   })
+  -- end
+
   for _, keymap in pairs(keymaps) do
     local opts = { buffer } ---@type vim.keymap.set.Opts
 
