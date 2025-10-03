@@ -55,14 +55,14 @@ local keymaps = {
 ---@param client vim.lsp.Client|nil
 ---@param buffer number
 local function on_attach(client, buffer)
-  -- if client and client:supports_method("textDocument/codeLens", buffer) then
-  --   vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-  --     buffer,
-  --     callback = function()
-  --       vim.lsp.codelens.refresh({ bufnr = buffer })
-  --     end,
-  --   })
-  -- end
+  if client and client:supports_method("textDocument/codeLens", buffer) then
+    vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+      buffer,
+      callback = function()
+        vim.lsp.codelens.refresh({ bufnr = buffer })
+      end,
+    })
+  end
 
   for _, keymap in pairs(keymaps) do
     local opts = { buffer } ---@type vim.keymap.set.Opts
