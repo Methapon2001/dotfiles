@@ -63,6 +63,10 @@ layout {
         inactive-color "#34343f"
     }
 
+    insert-hint {
+        color "#ffbc9b80"
+    }
+
     struts {
         left 2
         right 2
