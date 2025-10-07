@@ -22,6 +22,14 @@ return {
         },
         documentation = { auto_show = true },
       },
+      cmdline = {
+        keymap = { preset = "cmdline" },
+        completion = {
+          list = {
+            selection = { preselect = false },
+          },
+        },
+      },
     },
   },
 }
