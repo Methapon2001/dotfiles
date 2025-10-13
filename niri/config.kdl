@@ -18,7 +18,7 @@ environment {
 
     CLIPHIST_MAX_ITEMS "20"
 
-    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    // ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
 
 input {
@@ -99,6 +99,7 @@ window-rule {
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=12 y=12 relative-to="bottom-right"
+    open-focused false
 }
 
 window-rule {
