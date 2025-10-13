@@ -173,6 +173,7 @@ return {
 
         -- JavaScript/TypeScript
         "vtsls",
+        "eslint-lsp",
         "svelte-language-server",
         "vue-language-server",
 
