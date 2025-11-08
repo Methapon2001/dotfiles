@@ -1,0 +1,23 @@
+window-rule {
+    match app-id="foot"
+
+    opacity 0.96
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=12 y=12 relative-to="bottom-right"
+    open-focused false
+}
+
+window-rule {
+    geometry-corner-radius 7
+    clip-to-geometry true
+}
