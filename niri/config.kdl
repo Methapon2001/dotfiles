@@ -9,6 +9,8 @@ spawn-at-startup "cliphist" "wipe"
 spawn-at-startup "nmapplet" "--indicator"
 spawn-at-startup "blueman-applet"
 
+spawn-at-startup "swayidle" "-w" "timeout" "300" "niri msg action power-off-monitors"
+
 spawn-at-startup "~/.config/niri/scripts/waybar.sh"
 
 environment {
