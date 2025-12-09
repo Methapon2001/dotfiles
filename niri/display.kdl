@@ -2,14 +2,14 @@ output "eDP-2" {
     focus-at-startup
     variable-refresh-rate
     mode "1920x1200@144.002"
-    background-color "#34343f"
-    backdrop-color "#24242f"
     scale 1.25
+
+    backdrop-color "#24242f"
 }
 
 output "ViewSonic Corporation VG1655 W3W215220087" {
     mode "1920x1080@59.934"
-    background-color "#34343f"
-    backdrop-color "#24242f"
     scale 1.25
+
+    backdrop-color "#24242f"
 }
