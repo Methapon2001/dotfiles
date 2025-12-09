@@ -127,6 +127,7 @@ return {
   },
   {
     "stevearc/overseer.nvim",
+    event = "VeryLazy",
     -- stylua: ignore
     keys = {
       { "<leader>tr", function() require("overseer").run_task({}) end, desc = "Run a task" },
