@@ -1,81 +1,12 @@
 // https://github.com/YaLTeR/niri/blob/main/resources/default-config.kdl
 
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-
-spawn-at-startup "swww-daemon"
-spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
-spawn-at-startup "cliphist" "wipe"
-
-spawn-at-startup "nmapplet" "--indicator"
-spawn-at-startup "blueman-applet"
-
-spawn-at-startup "swayidle" "-w" "timeout" "300" "niri msg action power-off-monitors"
-
-spawn-at-startup "~/.config/niri/scripts/waybar.sh"
-
-environment {
-    QT_QPA_PLATFORM "wayland"
-    QT_QPA_PLATFORMTHEME "qt6ct"
-    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-
-    CLIPHIST_MAX_ITEMS "20"
-
-    // ELECTRON_OZONE_PLATFORM_HINT "auto"
-}
-
-input {
-    keyboard {
-        xkb { layout "us,th"
-            options "grp:win_space_toggle,compose:ralt"
-        }
-
-        numlock
-    }
-
-    touchpad {
-        tap
-        natural-scroll
-    }
-}
-
-output "eDP-2" {
-    focus-at-startup
-    variable-refresh-rate
-    mode "1920x1200@144.002"
-    background-color "#34343f"
-    backdrop-color "#24242f"
-    scale 1.25
-}
-
-output "ViewSonic Corporation VG1655 W3W215220087" {
-    mode "1920x1080@59.934"
-    background-color "#34343f"
-    backdrop-color "#24242f"
-    scale 1.25
-}
-
-layout {
-    gaps 12
-
-    default-column-width { proportion 0.7; }
-
-    focus-ring {
-        width 2
-        active-color "#ffbc9b"
-        inactive-color "#34343f"
-    }
-
-    insert-hint {
-        color "#ffbc9b80"
-    }
-
-    struts {
-        left 2
-        right 2
-        top 2
-        bottom 2
-    }
-}
+include "autostart.kdl"
+include "keybinds.kdl"
+include "input.kdl"
+include "display.kdl"
+include "layout.kdl"
+include "rules.kdl"
+include "animation.kdl"
 
 prefer-no-csd
 screenshot-path null
@@ -84,5 +15,27 @@ hotkey-overlay {
     skip-at-startup
 }
 
-include "rules.kdl"
-include "keybinds.kdl"
+environment {
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+
+    CLIPHIST_MAX_ITEMS "20"
+}
+
+recent-windows {
+    debounce-ms 750
+
+    open-delay-ms 150
+
+    highlight {
+        active-color "#ffbc9bac"
+        urgent-color "#ff9999ff"
+        corner-radius 7
+    }
+
+    binds {
+        Alt+Tab         { next-window scope="output"; }
+        Alt+Shift+Tab   { previous-window scope="output"; }
+    }
+}

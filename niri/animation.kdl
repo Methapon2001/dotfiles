@@ -1,0 +1,6 @@
+animations {
+    screenshot-ui-open {
+        duration-ms 300
+        curve "ease-out-quad"
+    }
+}

@@ -1,0 +1,22 @@
+layout {
+    gaps 12
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 2
+        active-color "#ffbc9b"
+        inactive-color "#34343f"
+    }
+
+    insert-hint {
+        color "#ffbc9b80"
+    }
+
+    struts {
+        left 2
+        right 2
+        top 2
+        bottom 2
+    }
+}
