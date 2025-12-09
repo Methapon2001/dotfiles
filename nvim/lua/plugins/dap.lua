@@ -21,10 +21,9 @@ return {
       { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
       { "<leader>dc", function() require("dap").continue() end, desc = "Run/Continue" },
       { "<leader>dt", function() require("dap").terminate({ all = true }) end, desc = "Terminate" },
-      { "<leader>dh", function() require("dap.ui.widgets").hover() end, desc = "Terminate" },
-      { "<F10>", function() require("dap").step_over() end, desc = "Step Over" },
-      { "<F11>", function() require("dap").step_into() end, desc = "Step Into" },
-      { "<S-F11>", function() require("dap").step_out() end, desc = "Step Out" },
+      { "<F6>", function() require("dap").step_over() end, desc = "Step Over" },
+      { "<F7>", function() require("dap").step_into() end, desc = "Step Into" },
+      { "<F8>", function() require("dap").step_out() end, desc = "Step Out" },
     },
     config = function()
       vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
