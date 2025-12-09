@@ -1,34 +1,34 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "eaf6920"
+rev = "57f1863"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "eaf6920"
-hash = "27ca02f49fd236b5cc7bf03c243859fe"
+rev = "57f1863"
+hash = "36a484acf6a0a0219c543ccb4cee218f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "eaf6920"
-hash = "4fccaaf10c36dc2466e2438a386ff017"
+rev = "57f1863"
+hash = "e2d4bfccf31e5ab05f46fee4797c5215"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:types"
-rev = "eaf6920"
-hash = "1e047e1b13b5e3fc6ab1f5d0d04a14e2"
+rev = "57f1863"
+hash = "daf9e3d12688cf855fce665839efcd6d"
 
 [[flavor.deps]]
 use = "Mintass/rose-pine"
 rev = "8343340"
-hash = "e2336631865c0f90276dcbc553d532fc"
+hash = "d92db727dc16db9357f0dcda2758170c"
 
 [[flavor.deps]]
 use = "Mintass/rose-pine-moon"
 rev = "aa2d937"
-hash = "97cd4819252cb1a9d0f55daa14e481e"
+hash = "f864fd523f0b3c65079d434eb537cdef"
 
 [[flavor.deps]]
 use = "Mintass/rose-pine-dawn"
 rev = "5c6d353"
-hash = "d9d9463d5d43ced18e18986d05439ace"
+hash = "1f9b1fa79a11ae9f9255b47380b98775"
