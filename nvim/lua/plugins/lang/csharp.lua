@@ -57,16 +57,6 @@ return {
 
       dap.adapters.netcoredbg = adapter
       dap.adapters.coreclr = adapter
-      dap.configurations.cs = {
-        {
-          type = "coreclr",
-          name = "Launch - netcoredbg",
-          request = "launch",
-          program = function()
-            return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug", "file")
-          end,
-        },
-      }
     end,
   },
 }

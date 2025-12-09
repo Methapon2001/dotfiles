@@ -3,6 +3,7 @@
 return {
   { "nvim-lua/plenary.nvim", lazy = true },
   { "j-hui/fidget.nvim", opts = {} },
+  { "mvllow/modes.nvim", opts = {} },
   { "numToStr/Comment.nvim", opts = {} },
   {
     "folke/snacks.nvim",
@@ -44,7 +45,6 @@ return {
       { "<leader>fd", function () Snacks.picker.diagnostics() end, desc = "Diagnostics" },
       { "<leader>ft", function () Snacks.picker.treesitter() end, desc = "Treesitter Nodes" },
       { "<leader>fz", function () Snacks.picker.zoxide() end, desc = "Zoxide" },
-      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit", mode = { "n" } },
     },
   },
   {
@@ -124,5 +124,15 @@ return {
         desc = "Search and Replace",
       },
     },
+  },
+  {
+    "stevearc/overseer.nvim",
+    -- stylua: ignore
+    keys = {
+      { "<leader>tr", function() require("overseer").run_task({}) end, desc = "Run a task" },
+    },
+    ---@module 'overseer'
+    ---@type overseer.SetupOpts
+    opts = {},
   },
 }

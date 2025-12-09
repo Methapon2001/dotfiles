@@ -4,10 +4,19 @@ return {
   {
     "igorlfs/nvim-dap-view",
     lazy = false,
+    -- stylua: ignore
+    keys = {
+      { "<leader>dw", function() require("dap-view").add_expr() end, desc = "Terminate" },
+    },
     ---@module 'dap-view'
     ---@type dapview.Config
     opts = {
       auto_toggle = true,
+      windows = {
+        terminal = {
+          position = "right",
+        },
+      },
     },
   },
   {
