@@ -5,6 +5,3 @@ edit = [{ run = 'nvim "$@"', block = true, for = "unix" }]
 
 [mgr]
 show_hidden = true
-
-[plugin]
-append_previewers = [{ name = "*", run = "hexyl" }]
