@@ -20,7 +20,6 @@ diff-editor = ":builtin"
 coalesce(signature.name(), name_placeholder)
 '''
 
-# external tool configs
-
 [lazyjj]
 diff-tool = "delta"
+highlight-color = "#403d52"
