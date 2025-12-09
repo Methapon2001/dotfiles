@@ -1,0 +1,26 @@
+#:schema https://jj-vcs.github.io/jj/latest/config-schema.json
+
+[user]
+name = "Methapon2001"
+email = "61303214+Methapon2001@users.noreply.github.com"
+
+[signing]
+behavior = "own"
+backend = "gpg"
+key = "849924FEF46BD132"
+
+[ui]
+default-command = "log"
+pager = "delta"
+diff-formatter = ":git"
+diff-editor = ":builtin"
+
+[template-aliases]
+'format_short_signature(signature)' = '''
+coalesce(signature.name(), name_placeholder)
+'''
+
+# external tool configs
+
+[lazyjj]
+diff-tool = "delta"
