@@ -1,8 +1,10 @@
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Ctrl+Alt+T hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
+    Ctrl+Alt+T hotkey-overlay-title="Open Terminal: foot" { spawn "foot"; }
     Alt+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+V hotkey-overlay-title="Open Clipboard History: cliphist" repeat=false { spawn-sh "cliphist list | fuzzel --dmenu --width 50 | cliphist decode | wl-copy"; }
+    Super+E hotkey-overlay-title="Open File Manager: Thunar" { spawn "thunar"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "swaylock"; }
 
     XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
@@ -18,8 +20,6 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "s" "+5%"; }
 
     Mod+Tab repeat=false { toggle-overview; }
-
-    Mod+V repeat=false { spawn-sh "cliphist list | fuzzel --dmenu --width 50 | cliphist decode | wl-copy"; }
 
     Mod+Q { close-window; }
 
