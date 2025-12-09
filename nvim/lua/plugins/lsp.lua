@@ -155,7 +155,7 @@ return {
         "stylua",
 
         -- Python
-        "basedpyright",
+        "ty",
         "ruff",
 
         -- Rust (rust-analyzer is installed by rustup)
